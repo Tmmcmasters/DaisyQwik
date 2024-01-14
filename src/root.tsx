@@ -17,14 +17,14 @@ export default component$(() => {
    */
 
   return (
-    <QwikCityProvider>
+    <QwikCityProvider data-theme="dark">
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body lang="en">
+      <body lang="en" data-theme="dark">
         <RouterOutlet />
       </body>
     </QwikCityProvider>

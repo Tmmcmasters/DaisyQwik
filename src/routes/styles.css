@@ -19,11 +19,7 @@ html {
     "Noto Color Emoji";
 }
 
-body {
-  background: var(--qwik-dark-background);
-  color: var(--qwik-dark-text);
-  overflow-x: hidden;
-}
+
 
 /* HEADINGS ------------------------------------- */
 h1,
@@ -89,11 +85,11 @@ ul {
   padding: 30px 40px;
 }
 .container.container-purple {
-  background: var(--qwik-light-purple);
+  /* background: var(--qwik-light-purple); */
 }
 .container.container-dark {
-  background: var(--qwik-dark-background);
-  color: var(--qwik-dark-text);
+  /* background: var(--qwik-dark-background); */
+  /* color: var(--qwik-dark-text); */
 }
 .container.container-center {
   text-align: center;
@@ -159,8 +155,8 @@ button.button-small {
   height: 400px;
   background: radial-gradient(
     57.58% 57.58% at 48.79% 42.42%,
-    rgba(24, 180, 244, 0.5) 0%,
-    rgba(46, 55, 114, 0) 63.22%
+    rgba(1, 27, 37, 0.5) 0%,
+    rgba(47, 56, 114, 0) 63.22%
   );
   transform: rotate(5deg);
   opacity: 0.5;
@@ -171,7 +167,7 @@ button.button-small {
   left: -100px;
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(172, 127, 244, 0.5) 0%,
+    rgba(22, 1, 54, 0.5) 0%,
     rgba(21, 25, 52, 0) 100%
   );
   transform: rotate(-5deg);

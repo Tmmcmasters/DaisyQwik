@@ -29,7 +29,7 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <main>
+      <main class="h-screen">
         <Slot />
       </main>
       <Footer />

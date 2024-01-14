@@ -1,42 +1,20 @@
 import { component$ } from "@builder.io/qwik";
-import { QwikLogo } from "../icons/qwik";
-import styles from "./header.module.css";
-
+import ImgGithub from '~/media/github-mark-white.png?jsx';
 export default component$(() => {
   return (
-    <header class={styles.header}>
-      <div class={["container", styles.wrapper]}>
-        <div class={styles.logo}>
-          <a href="/" title="qwik">
-            <QwikLogo height={50} width={143} />
-          </a>
-        </div>
-        <ul>
-          <li>
-            <a
-              href="https://qwik.builder.io/docs/components/overview/"
-              target="_blank"
-            >
-              Docs
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://qwik.builder.io/examples/introduction/hello-world/"
-              target="_blank"
-            >
-              Examples
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://qwik.builder.io/tutorial/welcome/overview/"
-              target="_blank"
-            >
-              Tutorials
-            </a>
-          </li>
-        </ul>
+    <header class="navbar flex flex-row justify-between sticky top-0 backdrop-blur-lg    z-50 ">
+      <a class="btn btn-ghost rounded-md text-3xl font-bold
+      bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text drop-shadow-lg" href="/">
+        qwikdaisy
+      </a>
+      
+      <div class='flex flex-row justify-center align-middle items-center gap-3'>
+        <a class="btn btn-ghost text-lg rounded-md " href="/">
+          Documentation
+        </a>
+        <a class="btn btn-circle btn-ghost mr-3" href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank">
+          <ImgGithub class="w-8 h-8" />
+        </a>
       </div>
     </header>
   );
