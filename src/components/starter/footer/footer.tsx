@@ -6,7 +6,7 @@ export default component$(() => {
 
   return (
     <footer class="flex flex-row justify-center align-middle items-center p-4">
-        <a href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" class="link link-primary ">
+        <a href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" class="link">
           <span >Made with ♡ by all those who contributed</span>
         </a>
     </footer>
