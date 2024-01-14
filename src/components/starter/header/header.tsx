@@ -11,7 +11,7 @@ export default component$(() => {
       </a>
       
       <div class='flex flex-row justify-around align-middle items-center '>
-        <a class="btn btn-ghost text-lg rounded-md " href="/">
+        <a class="btn btn-ghost text-lg rounded-md " href="/docs">
           Documentation
         </a>
         <a class="hidden sm:flex btn btn-circle btn-ghost " href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" text="Github Link">

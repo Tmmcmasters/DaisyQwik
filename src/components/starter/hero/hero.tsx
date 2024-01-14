@@ -15,19 +15,19 @@ export default component$(() => {
       </div>
 
       <div class="bg-base flex flex-row justify-center align-middle items-center font-bold gap-3 mt-20 flex-wrap ">
-        <ImgThunder class="w-20 h-20 drop-shadow-lg" alt="Qwik JavaScript Logo"/>
+        <ImgThunder class="w-20 h-20 drop-shadow-lg" alt="Qwik JavaScript Logo" />
         <h1 class=" text-base-content drop-shadow-lg ">+</h1>
-        <ImgDaisy class="w-20 h-20 drop-shadow-lg" alt="Daisy UI Logo"/>
+        <ImgDaisy class="w-20 h-20 drop-shadow-lg" alt="Daisy UI Logo" />
         <h1 class=" text-base-content drop-shadow-lg">=</h1>
         <h1 class=" ml-4 drop-shadow-lg  bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text ">AWESOME!</h1>
       </div>
-      
+
       {/* <h3 class="mt-20  text-info-content font-semibold">Get Started!</h3> */}
       <div class="bg-base flex flex-row justify-around align-middle items-center mt-20 ">
-        <a class="btn btn-lg  text-xl btn-outline " href="">Get Started!</a>
+        <a class="btn btn-lg  text-xl btn-outline " href="/docs">Get Started!</a>
       </div>
     </div>
-  
+
   );
 });
 
