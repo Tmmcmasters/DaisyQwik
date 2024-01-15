@@ -24,7 +24,7 @@ export default component$(() => {
 
       {/* <h3 class="mt-20  text-info-content font-semibold">Get Started!</h3> */}
       <div class="bg-base flex flex-row justify-around align-middle items-center mt-20 ">
-        <a class="btn btn-lg  text-xl btn-outline " href="/docs">Get Started!</a>
+        <a class="btn btn-lg btn-accent  text-xl btn-outline shadow-2xl shadow-purple-500 hover:shadow-xl hover:shadow-purple-300" href="/docs">Get Started!</a>
       </div>
     </div>
 
