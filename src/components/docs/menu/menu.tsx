@@ -2,9 +2,9 @@
 
 import { component$ } from '@builder.io/qwik';
 
-export const Sidebar = component$(() => {
+export const Menu = component$(() => {
   return (
-    <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+    <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content backdrop-blur-lg  bg-transparent">
             <li>
               <details open>
                 <summary><a href='/docs'>Docs</a></summary>

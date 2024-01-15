@@ -1,22 +1,21 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Sidebar } from "~/components/docs/menu/menu";
+import { Content } from "~/components/docs/content/content";
+import { Menu } from "~/components/docs/menu/menu";
 
 
 export default component$(() => {
   return (
     <>
-    <div class="drawer lg:drawer-open lg:z-auto z-50 ">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col items-center justify-center">
-        <label for="my-drawer-3" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-        </div>
-        <div class="drawer-side">
-        <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
-            <Sidebar />
-        </div>
-    </div>
-</>
+    <div class="flex flex-col justify-start align-middle items-start  pl-10 pt-5 gap-3">
+    {/* <div class="pl-10 pt-5"> */}
+        <h1 class="text-3xl font-bold">
+            Getting Started!
+        </h1>
+        <p>This is currently a work in progress...Check back soon! :)</p>
+    {/* </div> */}
+  </div>
+    </>
   );
 });
 
