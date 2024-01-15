@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Content } from "~/components/docs/content/content";
-import { Menu } from "~/components/docs/menu/menu";
+// import { Content } from "~/components/docs/content/content";
+// import { Menu } from "~/components/docs/menu/menu";
 
 
 export default component$(() => {

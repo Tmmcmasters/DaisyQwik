@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import Hero from "../components/starter/hero/hero";
-import Infobox from "../components/starter/infobox/infobox";
+// import Infobox from "../components/starter/infobox/infobox";
 import Header from "~/components/starter/headers/header";
 import Footer from "~/components/starter/footer/footer";
 

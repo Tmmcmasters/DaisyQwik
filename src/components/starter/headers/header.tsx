@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import ImgGithub from '~/media/github-mark-white.png?jsx';
-import HeaderCss from './header.css';
+// import HeaderCss from './header.css';
 
 export default component$(() => {
   return (
