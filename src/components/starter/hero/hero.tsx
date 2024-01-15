@@ -15,9 +15,13 @@ export default component$(() => {
       </div>
 
       <div class="bg-base flex flex-row justify-center align-middle items-center font-bold gap-3 mt-20 flex-wrap ">
-        <ImgThunder class="w-20 h-20 drop-shadow-lg" alt="Qwik JavaScript Logo" />
+        <a href="https://qwik.builder.io" target="_blank" text="Qwik Framework Website" class="hover:border-2 hover:border-base-content transition-all duration-200 ease-in-out  rounded-btn hover:shadow-xl hover:shadow-purple-700">
+        <ImgThunder class="w-20 h-20 mix-blend-ov" alt="Qwik JavaScript Logo" />
+        </a>
         <h1 class=" text-base-content drop-shadow-lg ">+</h1>
+        <a href="https://daisyui.com/" target="_blank" text="Daisy UI Website" class="hover:border-2 hover:border-base-content transition-all duration-200 ease-in-out  rounded-btn hover:shadow-xl hover:shadow-green-700">
         <ImgDaisy class="w-20 h-20 drop-shadow-lg" alt="Daisy UI Logo" />
+        </a>
         <h1 class=" text-base-content drop-shadow-lg">=</h1>
         <h1 class=" ml-4 drop-shadow-lg  bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text ">AWESOME!</h1>
       </div>
