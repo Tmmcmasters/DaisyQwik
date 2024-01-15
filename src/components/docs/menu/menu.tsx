@@ -9,11 +9,11 @@ export const Sidebar = component$(() => {
               <details open>
                 <summary><a href='/docs'>Docs</a></summary>
                 <ul>
-                  <li ><a class="flex justify-between">Install<div class="badge badge-warning gap-2">
+                  <li ><a href='/docs' class="flex justify-between">Install<div class="badge badge-warning gap-2">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
   In Progress
 </div></a></li>
-                  <li ><a class="flex justify-between">Use<div class="badge badge-warning gap-2">
+                  <li ><a href='/docs' class="flex justify-between">Use<div class="badge badge-warning gap-2">
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
   In Progress
 </div></a></li>

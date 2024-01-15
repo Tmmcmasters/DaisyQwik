@@ -39,6 +39,19 @@ export default {
       "dim",
       "nord",
       "sunset",
+      {
+        darkV2: {
+          "primary": "#006FEE",
+          "secondary": "#7828C8",
+          "accent": "#ffffff",
+          "neutral": "#71717A",
+          "base-100": "#000000",
+          "info": "#00ffff",
+          "success": "#17C964",
+          "warning": "#F5A524",
+          "error": "#F31260",
+        },
+      },
     ],
   },
 };
