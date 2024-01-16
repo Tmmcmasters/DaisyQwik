@@ -12,7 +12,7 @@ export const Menu = component$(() => {
             <li>
               <a href="/docs" class="flex justify-between">
                 Install
-                <div class="badge badge-warning gap-2">
+                <div class="badge badge-neutral gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -26,14 +26,35 @@ export const Menu = component$(() => {
                       d="M6 18L18 6M6 6l12 12"
                     ></path>
                   </svg>
-                  In Progress
+                  Planned
                 </div>
               </a>
             </li>
             <li>
               <a href="/docs" class="flex justify-between">
                 Use
-                <div class="badge badge-warning gap-2">
+                <div class="badge badge-neutral gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="inline-block h-4 w-4 stroke-current"
+                  >
+                    <path 
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                  Planned
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/docs" class="flex justify-between">
+                Themes
+                <div class="badge badge-neutral gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -47,7 +68,7 @@ export const Menu = component$(() => {
                       d="M6 18L18 6M6 6l12 12"
                     ></path>
                   </svg>
-                  In Progress
+                  Planned
                 </div>
               </a>
             </li>
@@ -153,7 +174,25 @@ export const Menu = component$(() => {
                 </summary>
                 <ul>
                   <li>
-                    <a href="/docs">Button</a>
+                  <a href="/docs/button" class="flex justify-between">
+                Button
+                <div class="badge badge-warning gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="inline-block h-4 w-4 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                  In Progress
+                </div>
+              </a>
                   </li>
                   <li>
                     <a href="/docs">Dropdown</a>
@@ -175,6 +214,29 @@ export const Menu = component$(() => {
                   </span>
                   <a href="/docs">Data Display</a>
                 </summary>
+                <ul>
+                <li>
+                    <a href="/docs/card">
+                      Card
+                      <div class="badge badge-warning gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          class="inline-block h-4 w-4 stroke-current"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                        </svg>
+                        In Progress
+                      </div>
+                      </a>
+                  </li>
+                </ul>
               </details>
             </li>
             <li>
@@ -185,6 +247,29 @@ export const Menu = component$(() => {
                   </span>
                   <a href="/docs">Navigation</a>
                 </summary>
+                <ul>
+                  <li>
+                    <a href="/docs/tab">
+                      Tab
+                      <div class="badge badge-warning gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          class="inline-block h-4 w-4 stroke-current"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                        </svg>
+                        In Progress
+                      </div>
+                      </a>
+                  </li>
+                </ul>
               </details>
             </li>
             <li>

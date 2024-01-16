@@ -32,11 +32,13 @@ export default component$(() => {
   return (
     <>
       <Docsheader />
-      <main class="h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60%">
+      <main class="h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60% scroll-smooth">
       <div class="drawer lg:drawer-open ">
         <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content ">
+          <div class='flex flex-col justify-start align-middle items-start gap-3 pl-10 pt-5'>
         <Slot />
+          </div>
         </div>
         <div class="drawer-side lg:z-auto z-50 ">
           <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
