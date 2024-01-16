@@ -18,8 +18,8 @@ export default component$(() => {
         {/* <a class="btn btn-ghost text-lg rounded-md " href="/docs">
           Documentation
         </a> */}
-        <a class=" sm:flex btn btn-circle btn-ghost " href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" text="Github Link">
-          <ImgGithub class="w-8 h-8" alt="Github Logo Link to DaisyQwik GitHub Page" />
+        <a class=" sm:flex btn btn-circle btn-secondary " href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" text="Github Link">
+          <ImgGithub class="w-8 h-8  " alt="Github Logo Link to DaisyQwik GitHub Page" />
         </a>
       </div>
     </header>
