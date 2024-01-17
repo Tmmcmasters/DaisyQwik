@@ -14,7 +14,7 @@ export default component$(() => {
         <a class="btn btn-ghost text-lg rounded-md " href="/docs">
           Documentation
         </a>
-        <a class="hidden sm:flex btn btn-circle btn-ghost " href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" text="Github Link">
+        <a class="hidden sm:flex btn btn-circle btn-accent bg-black" href="https://github.com/Tmmcmasters/DaisyQwik" target="_blank" text="Github Link">
           <ImgGithub class="w-8 h-8" alt="Github Logo Link to DaisyQwik GitHub Page" />
         </a>
       </div>
