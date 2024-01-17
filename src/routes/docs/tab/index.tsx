@@ -10,28 +10,30 @@ export default component$(() => {
       <br></br>
       
 
-      
-<TabList size="md">
-  <Tab label="Tab 1" name='tab1' checked/>
+      <div class='w-11/12 max-w-[721px]'>
+
+<TabList size="md" groupName='tab1'>
+  <Tab label="Tab 1"  checked/>
   <TabPanel>
     <H1 text="Tab 1" />
   </TabPanel>
-  <Tab label="Tab 2"  name='tab1'/>
+  <Tab label="Tab 2"  />
   <TabPanel>
     <H1 text="Tab 2" />
   </TabPanel>
 </TabList>
 <br></br>
-<TabList  size="md">
-  <Tab label="Tab 1" name='tab2' checked/>
+<TabList groupName='tab2' size="sm">
+  <Tab label="Big tab"  checked/>
   <TabPanel>
-    <H1 text="Tab 1" />
+    <H1 text="Tab 1 of 2" />
   </TabPanel>
-  <Tab label="Tab 2" name='tab2'/>
+  <Tab label="Tab 2 of 2" />
   <TabPanel>
-    <H1 text="Tab 2" />
+    <H1 text="Tab 2 of 2" />
   </TabPanel>
 </TabList>
+      </div>
     </>
   );
 });
