@@ -51,7 +51,7 @@ export default {
           "warning": "#F5A524",
           "error": "#F31260",
         },
-      },
+      }
     ],
   },
 };

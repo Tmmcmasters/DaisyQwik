@@ -10,9 +10,8 @@ export default component$(() => {
       <br></br>
       
 
-    
-
-<TabList type='lifted' size="md">
+      
+<TabList size="md">
   <Tab label="Tab 1" name='tab1' checked/>
   <TabPanel>
     <H1 text="Tab 1" />
@@ -23,7 +22,7 @@ export default component$(() => {
   </TabPanel>
 </TabList>
 <br></br>
-<TabList type='lifted' size="md">
+<TabList  size="md">
   <Tab label="Tab 1" name='tab2' checked/>
   <TabPanel>
     <H1 text="Tab 1" />
