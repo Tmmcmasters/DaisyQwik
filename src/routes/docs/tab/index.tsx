@@ -1,4 +1,4 @@
-import { Slot, component$ } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { Tab, TabList, TabPanel } from '~/components/daisyqwik/tab/tab';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 

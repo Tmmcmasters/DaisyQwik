@@ -1,5 +1,6 @@
 import { $, component$ } from '@builder.io/qwik';
 import { Button } from '~/components/daisyqwik/button/button';
+import { Code } from '~/components/daisyqwik/code/code';
 import { TabList, TabPanel, Tab } from '~/components/daisyqwik/tab/tab';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 // import lib
@@ -35,20 +36,20 @@ export default component$(() => {
           </TabPanel>
           <Tab label="Code" />
           <TabPanel>
-            <div class="w-full flex justify-start ">
-            <pre>
-              <code class="bg-transparent ">
-                {`<Button onClick$={$(() => { alert('clicked'); })} color='neutral'size='md'>
-This is a button
-</Button>`}
-              </code>
-            </pre>
-                </div>
+          <div class="w-full  flex justify-start">
+<Code code={`<Button onClick$={$(() => { alert('clicked');})}
+  color='neutral'
+  type='button'
+  variant='normal'
+>
+  This is a button
+</Button>`
+} lang="tsx" options={{showLineNumbers: true}} />
+          </div>
           </TabPanel>
         </TabList>
 
       </div>
-      <button class="btn btn-outline">This is an outlined button</button>
     </>
   );
 });

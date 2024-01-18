@@ -9,6 +9,7 @@ import Footer from "~/components/starter/footer/footer";
 export default component$(() => {
   return (
     <>
+    
     <Header />
     <main class="h-screen">
     <div class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60%">
