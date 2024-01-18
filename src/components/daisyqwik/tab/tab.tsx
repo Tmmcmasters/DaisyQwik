@@ -1,4 +1,5 @@
 import { Slot, component$, createContextId, useContext, useContextProvider } from '@builder.io/qwik';
+import type { ClassList } from '@builder.io/qwik';
 
 export interface TabProps {
   label: string,
@@ -27,12 +28,20 @@ export const Tab = component$<TabProps>((props) => {
   );
 });
 
+export interface TabPanelProps {
+  maxHeight?: '[500px]' | 'none' | '[100px]' | '80',
+}
 
-
-export const TabPanel = component$(() => {
+export const TabPanel = component$<TabPanelProps>((props: TabPanelProps) => {
   return (
-    <div role='tabpanel' class=
-      "tab-content bg-base-100 border-base-content border-2 border-t-2 rounded-box p-6 w-full ">
+    <div role='tabpanel' class={
+      `tab-content bg-base-100 border-base-content border-2 border-t-2 rounded-box p-6 w-full 
+      overflow-y-auto ${props.maxHeight == '[500px]' ? 'max-h-[500px]' : 
+      props.maxHeight == '[100px]' ? 'max-h-[100px]' :
+      props.maxHeight == '80' ? 'max-h-[80px]' : 'max-h-none'
+    }
+      `
+    }>
       <Slot />
     </div>
   )
