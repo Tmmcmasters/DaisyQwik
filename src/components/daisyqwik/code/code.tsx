@@ -77,8 +77,6 @@ export const Code = component$<CodeProps>((props) => {
       dangerouslySetInnerHTML={codeSignal.value}
       class={["qwik-shikiji", options?.showLineNumbers && "with-line-numbers"]}
     >
-      
-
     </div>
   );
 });
