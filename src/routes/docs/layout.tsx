@@ -40,7 +40,7 @@ export default component$(() => {
     const href = anchor.getAttribute('href');
     if (href) {
       const targetElement = document.querySelector(href) as HTMLElement;
-      if (targetElement) {
+      // if (targetElement) {
         const headerElement = document.querySelector('#docs-header') as HTMLElement;
         const scrollPosition = targetElement.offsetTop - (headerElement.clientHeight - 20 || 0);
         
@@ -48,7 +48,7 @@ export default component$(() => {
           top: scrollPosition,
           behavior: 'smooth'
         });
-      }
+      // }
     }
   }));
   
