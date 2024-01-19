@@ -19,11 +19,7 @@ html {
     "Noto Color Emoji";
 }
 
-body {
-  background: var(--qwik-dark-background);
-  color: var(--qwik-dark-text);
-  overflow-x: hidden;
-}
+
 
 /* HEADINGS ------------------------------------- */
 h1,
@@ -67,16 +63,12 @@ h3 {
 }
 
 /* TAGS ----------------------------------------- */
-a {
+/* a {
   text-decoration: none;
   color: var(--qwik-light-blue);
-}
+} */
 
-code {
-  background: rgba(230, 230, 230, 0.3);
-  border-radius: 4px;
-  padding: 2px 6px;
-}
+
 
 ul {
   margin: 0;
@@ -84,7 +76,7 @@ ul {
 }
 
 /* CONTAINER ------------------------------------ */
-.container {
+/* .container {
   margin: 0 auto;
   padding: 30px 40px;
 }
@@ -94,18 +86,18 @@ ul {
 .container.container-dark {
   background: var(--qwik-dark-background);
   color: var(--qwik-dark-text);
-}
-.container.container-center {
+} */
+/* .container.container-center {
   text-align: center;
 }
 .container.container-flex {
-  /* does nothing on mobile */
+  /* does nothing on mobile 
 }
 .container.container-spacing-xl {
   padding: 50px 40px;
-}
+} */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .container {
     padding: 50px 80px;
   }
@@ -117,10 +109,10 @@ ul {
     justify-content: center;
     gap: 60px;
   }
-}
+} */
 
 /* BUTTONS -------------------------------------- */
-a.button,
+/* a.button,
 button {
   background: var(--qwik-light-blue);
   border: none;
@@ -130,25 +122,25 @@ button {
   font-size: 0.8rem;
   padding: 15px 20px;
   text-align: center;
-}
+} */
 
-a.button.button-dark,
+/* a.button.button-dark,
 button.button-dark {
   background: var(--qwik-dirty-black);
-}
+} */
 
-a.button.button-small,
+/* a.button.button-small,
 button.button-small {
   padding: 15px 25px;
-}
+} */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   a.button,
   button {
     font-size: 1rem;
     padding: 23px 35px;
   }
-}
+} */
 
 /* DESIGN --------------------------------------- */
 .ellipsis {
@@ -159,8 +151,8 @@ button.button-small {
   height: 400px;
   background: radial-gradient(
     57.58% 57.58% at 48.79% 42.42%,
-    rgba(24, 180, 244, 0.5) 0%,
-    rgba(46, 55, 114, 0) 63.22%
+    rgba(1, 27, 37, 0.5) 0%,
+    rgba(47, 56, 114, 0) 63.22%
   );
   transform: rotate(5deg);
   opacity: 0.5;
@@ -171,7 +163,7 @@ button.button-small {
   left: -100px;
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(172, 127, 244, 0.5) 0%,
+    rgba(22, 1, 54, 0.5) 0%,
     rgba(21, 25, 52, 0) 100%
   );
   transform: rotate(-5deg);
