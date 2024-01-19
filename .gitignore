@@ -43,8 +43,11 @@ lerna-debug.log*
 
 # Vercel
 .vercel
+<<<<<<< HEAD
 
 # Cloudflare
 functions/**/*.js
 =======
 >>>>>>> parent of 049ed43 (Adding Vercel Adapter)
+=======
+>>>>>>> parent of eff301a (adding cloudfare)
