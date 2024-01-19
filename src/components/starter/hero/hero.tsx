@@ -1,82 +1,37 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./hero.module.css";
 import ImgThunder from "../../../media/thunder.png?jsx";
+import ImgDaisy from '~/media/daisyui.png?jsx';
+
 
 export default component$(() => {
   return (
-    <div class={["container", styles.hero]}>
-      <ImgThunder class={styles["hero-image"]} alt="Image thunder" />
-      <h1>
-        So <span class="highlight">fantastic</span>
-        <br />
-        to have <span class="highlight">you</span> here
-      </h1>
-      <p>Have fun building your App with Qwik.</p>
-      <div class={styles["button-group"]}>
-        <button
-          onClick$={async () => {
-            const defaults = {
-              spread: 360,
-              ticks: 70,
-              gravity: 0,
-              decay: 0.95,
-              startVelocity: 30,
-              colors: ["006ce9", "ac7ff4", "18b6f6", "713fc2", "ffffff"],
-              origin: {
-                x: 0.5,
-                y: 0.35,
-              },
-            };
+    <div class="bg-base flex flex-col justify-center align-middle items-center p-12 text-start">
+      <div class="bg-base flex flex-row justify-start align-middle items-center">
+        <h1 class=""><span class="font-bold text-[#FE9A03] bg-gradient-to-tr from-[#1AD0A5] from-30% to-[#FE9A03] to-50% text-transparent bg-clip-text drop-shadow-lg">daisy</span><span class="text-[#1AD0A5] font-bold drop-shadow-lg">UI </span><span class="text-base-content drop-shadow-lg">Components</span></h1>
+      </div>
 
-            function loadConfetti() {
-              return new Promise<(opts: any) => void>((resolve, reject) => {
-                if ((globalThis as any).confetti) {
-                  return resolve((globalThis as any).confetti as any);
-                }
-                const script = document.createElement("script");
-                script.src =
-                  "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
-                script.onload = () =>
-                  resolve((globalThis as any).confetti as any);
-                script.onerror = reject;
-                document.head.appendChild(script);
-                script.remove();
-              });
-            }
+      <div class="bg-base flex flex-row justify-center align-middle items-center mt-3">
+        <h1 class=" text-base-content drop-shadow-lg">for <span class="text-purple-300 font-bold drop-shadow-lg">q</span><span class="text-purple-400 font-bold drop-shadow-lg">w</span><span class="text-purple-500 font-bold drop-shadow-lg">i</span><span class="text-purple-600 font-bold drop-shadow-lg">k</span></h1>
+      </div>
 
-            const confetti = await loadConfetti();
-
-            function shoot() {
-              confetti({
-                ...defaults,
-                particleCount: 80,
-                scalar: 1.2,
-              });
-
-              confetti({
-                ...defaults,
-                particleCount: 60,
-                scalar: 0.75,
-              });
-            }
-
-            setTimeout(shoot, 0);
-            setTimeout(shoot, 100);
-            setTimeout(shoot, 200);
-            setTimeout(shoot, 300);
-            setTimeout(shoot, 400);
-          }}
-        >
-          Time to celebrate
-        </button>
-        <a
-          href="https://qwik.builder.io/docs"
-          target="_blank"
-          class="button button-dark"
-        >
-          Explore the docs
+      <div class="bg-base flex flex-row justify-center align-middle items-center font-bold gap-3 mt-20 flex-wrap ">
+        <a href="https://qwik.builder.io" target="_blank" text="Qwik Framework Website" class="border-2 border-neutral-500 hover:border-base-content transition-all duration-200 ease-in-out  rounded-btn hover:shadow-xl hover:shadow-purple-700">
+        <ImgThunder class="w-20 h-20 drop-shadow-lg" alt="Qwik JavaScript Logo" />
         </a>
+        <h1 class=" text-base-content drop-shadow-lg ">+</h1>
+        <a href="https://daisyui.com/" target="_blank" text="Daisy UI Website" class="border-2 border-neutral-500 hover:border-base-content transition-all duration-200 ease-in-out  rounded-btn hover:shadow-xl hover:shadow-green-700">
+        <ImgDaisy class="w-20 h-20 drop-shadow-lg" alt="Daisy UI Logo" />
+        </a>
+        <h1 class=" text-base-content drop-shadow-lg">=</h1>
+        <h1 class=" ml-4 drop-shadow-lg  bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text ">AWESOME!</h1>
+      </div>
+
+      {/* <h3 class="mt-20  text-info-content font-semibold">Get Started!</h3> */}
+      <div class="bg-base flex flex-row justify-around align-middle items-center mt-20 ">
+        <a class="btn btn-lg btn-accent  text-xl btn-outline shadow-2xl shadow-purple-500 hover:shadow-xl hover:shadow-purple-300" href="/docs">Get Started!</a>
       </div>
     </div>
+
   );
 });
+
