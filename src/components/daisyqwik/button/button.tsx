@@ -17,6 +17,7 @@ export interface ButtonProps {
 }
 
 export const Button = component$<ButtonProps>((props) => {
+
   return (
     <button class={`
     btn ${props.color == 'primary' ? 'btn-primary' : 

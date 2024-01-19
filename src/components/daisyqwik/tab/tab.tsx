@@ -1,5 +1,4 @@
 import { Slot, component$, createContextId, useContext, useContextProvider } from '@builder.io/qwik';
-import type { ClassList } from '@builder.io/qwik';
 
 export interface TabProps {
   label: string,
@@ -17,7 +16,7 @@ export const Tab = component$<TabProps>((props) => {
     <input
       type='radio'
       name={groupName}
-      role='tab'
+      role='t'
       class='tab before:!hidden checked:!border-base-content !border-t-2  !border-r-2 !border-l-2 !border-b-0
     checked:!-bottom-[1px]
     text-xs md:text-sm

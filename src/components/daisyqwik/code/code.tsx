@@ -1,7 +1,6 @@
 import { component$, useSignal, useStyles$, useTask$ } from "@builder.io/qwik";
 import { getHighlighter } from "shikiji";
 import { CodeProps, Theme } from "./types";
-import { Button } from "../button/button";
 
 export const Code = component$<CodeProps>((props) => {
   const codeSignal = useSignal<string>("");
