@@ -7,7 +7,9 @@
 </p>
 
 > Beautiful UI Component Library built for Qwik Framework and based off of DaisyUI.
-<h2 style="text-align: center; color: yellow; font-weight: bold; font-size: 24px; background-color: black;">This is currently a work in progress...Check back soon! :)</h2>
+```diff
+! This is  currently a work in progress! Check back soon! :)
+```
 
 ### 🏠 [Homepage](https://main--qwikdaisy.netlify.app/)
 
