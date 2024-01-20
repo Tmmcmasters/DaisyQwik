@@ -12,6 +12,7 @@ export default component$(() => {
     <>
       <H1 text="Button:" />
       <p class="text-warning">This is currently a work in progress...Check back soon! :)</p>
+      <p class="text-warning">Right and Left Keyboard to navigate :)</p>
       <div class='w-11/12 max-w-[721px] flex flex-col justify-start gap-8'>
         <div>
           <div id='button' class="mb-2 font-bold" ><a class="opacity-50" href='#button' >#</a> Button</div>

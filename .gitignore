@@ -39,6 +39,18 @@ lerna-debug.log*
 # Yarn
 .yarn/*
 !.yarn/releases
+<<<<<<< HEAD
 
 # Vercel
 .vercel
+<<<<<<< HEAD
+
+# Cloudflare
+functions/**/*.js
+=======
+>>>>>>> parent of 049ed43 (Adding Vercel Adapter)
+=======
+>>>>>>> parent of eff301a (adding cloudfare)
+
+# Netlify
+.netlify
