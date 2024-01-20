@@ -51,3 +51,6 @@ functions/**/*.js
 >>>>>>> parent of 049ed43 (Adding Vercel Adapter)
 =======
 >>>>>>> parent of eff301a (adding cloudfare)
+
+# Netlify
+.netlify
