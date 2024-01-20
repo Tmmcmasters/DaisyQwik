@@ -11,9 +11,9 @@
 ! This is  currently a work in progress! Check back soon! :)
 ```
 
-### 🏠 [Homepage](https://main--qwikdaisy.netlify.app/)
+### 🏠 [Homepage](https://qwikdaisy.netlify.app/)
 
-### ✨ [Demo](https://main--qwikdaisy.netlify.app/)
+### ✨ [Demo](https://qwikdaisy.netlify.app/)
 
 ## Prerequisites
 
