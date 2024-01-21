@@ -55,7 +55,7 @@ export default component$(() => {
 
   return (
     <>
-      <main class="h-fit min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60% scroll-smooth">
+      <main class="h-fit pb-20 min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60% scroll-smooth">
       <Docsheader />
         <div class="drawer lg:drawer-open ">
           <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
