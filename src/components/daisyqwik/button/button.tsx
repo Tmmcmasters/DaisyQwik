@@ -1,5 +1,5 @@
 import { Slot, component$ } from '@builder.io/qwik';
-import type { Component, PropFunction } from '@builder.io/qwik';
+import type { ClassList, Component, PropFunction } from '@builder.io/qwik';
 
 
 export interface ButtonProps {
@@ -13,6 +13,7 @@ export interface ButtonProps {
   shape?: 'circle' | 'square',
   loadingStart?: boolean,
   loadingEnd?: boolean,
+  class?: ClassList,
 }
 
 export const Button = component$<ButtonProps>((props) => {
@@ -46,6 +47,7 @@ export const Button = component$<ButtonProps>((props) => {
     ${props.shape == 'circle' ? 'btn-circle' :
         props.shape == 'square' ? 'btn-square' :
     ''}
+    ${props.class}
     ${props.disabled ? 'btn-disabled' : ''}
     ${props.size == 'xs' ? 'btn-xs' :
         props.size == 'sm' ? 'btn-sm' :
@@ -62,7 +64,7 @@ export const Button = component$<ButtonProps>((props) => {
       onClick$={props.onClick$}
       disabled={props.disabled}>
         {props.loadingStart == true ? <span class="loading loading-spinner"></span> : null}
-      <Slot />
+      <Slot  />
       {props.loadingEnd == true ? <span class="loading loading-spinner"></span> : null}
     </button>
   );

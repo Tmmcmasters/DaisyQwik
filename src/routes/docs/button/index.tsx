@@ -628,6 +628,34 @@ Icon End
           </TabList>
         </div>
 
+        <div class="flex flex-col gap-2">
+          <div id='button-class' class=" font-bold" ><a class="opacity-50" href='#button-class'>#</a> Custom Button Styles</div>
+          <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">Class allows you to use your own custom tailwind class styles on top of the button component.<br></br>
+              For example: you can add shadow and hover effects.
+            </p>
+          </div>
+          <TabList groupName='tab12' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='primary' type='button' variant='outline' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
+                  Shadow and Hover Effects
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='primary' type='button' variant='outline' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
+  Shadow and Hover Effects
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
       </div>
     </>
   );
