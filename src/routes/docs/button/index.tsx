@@ -639,16 +639,16 @@ Icon End
             <Tab label="Preview" checked />
             <TabPanel>
               <div class="w-full flex justify-center gap-4 flex-wrap">
-                <Button color='primary' type='button' variant='outline' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
-                  Shadow and Hover Effects
+                <Button color='primary' type='button' variant='outline' size='lg' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
+                   Custom Tailwind Styles
                 </Button>
               </div>
             </TabPanel>
             <Tab label="Code" />
             <TabPanel maxHeight='[500px]'>
               <div class="w-full  ">
-                <Code code={`<Button color='primary' type='button' variant='outline' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
-  Shadow and Hover Effects
+                <Code code={`<Button color='primary' type='button' variant='outline' size='lg' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
+   Custom Tailwind Styles
 </Button>`
                 } lang="tsx" options={{ showLineNumbers: true }} />
               </div>
