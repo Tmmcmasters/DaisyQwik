@@ -29,8 +29,8 @@ export default component$(() => {
 
       {/* <h3 class="mt-20  text-info-content font-semibold">Get Started!</h3> */}
       <div class="bg-base flex flex-row justify-around align-middle items-center mt-20 ">
-        <Button size="lg" variant="outline" color="accent"  class="animate-bounce shadow-2xl shadow-purple-500 hover:shadow-xl hover:shadow-purple-300">
-          <a href="/docs">Get Started!</a>
+        <Button size="lg" variant="outline" color="accent"  class="animate-bounce shadow-2xl shadow-purple-500 hover:shadow-xl hover:shadow-purple-300" As="Link" href="/docs">
+          Get Started
         </Button>
       </div>
     </div>

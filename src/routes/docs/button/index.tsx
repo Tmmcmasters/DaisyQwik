@@ -336,16 +336,20 @@ export const Button = component$<ButtonProps>((props) => {
         <div class="flex flex-col gap-2">
           <div id='button-link' class=" font-bold" ><a class="opacity-50" href='#button-link'>#</a> Button as a link</div>
           <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
-            <p class="text-base font-medium drop-shadow-xl">Link has default link styling. <br></br>You must add an <code>{`<a>`}</code> child element to the button to make it a link. </p>
+            <p class="text-base font-medium drop-shadow-xl">Setting variant to <code>{`'link'`}</code> will <span class="underline">only style</span> the button as a link.<br></br>To make it a link, you must set the <code>{`href`}</code> prop and the <code>{`As`}</code> prop </p>
           </div>
           <TabList groupName='tab5' size='md'>
             <Tab label="Preview" checked />
             <TabPanel>
               <div class="w-full flex justify-center gap-4 flex-wrap">
                 <Button color='neutral' variant='link'>
-                  <a href='/docs/button'>
-                    Link to nothing
-                  </a>
+                  Styled Link to nothing
+                </Button>
+                <Button variant='normal' As='Link' href='/docs/button'>
+                  Normal Styling to docs/button
+                </Button>
+                <Button variant='link' As='Link' href='/docs/button'>
+                  Styled Link to docs/button
                 </Button>
               </div>
             </TabPanel>
@@ -353,9 +357,13 @@ export const Button = component$<ButtonProps>((props) => {
             <TabPanel maxHeight='[500px]'>
               <div class="w-full  ">
                 <Code code={`<Button color='neutral' variant='link'>
-  <a href='/docs/button'>
-  Link to nothing
-  </a>
+  Styled Link to nothing
+</Button>
+<Button variant='normal' As='Link' href='/docs/button'>
+  Normal Styling to docs/button
+</Button>
+<Button variant='link' As='Link' href='/docs/button'>
+  Styled Link to docs/button
 </Button>`
                 } lang="tsx" options={{ showLineNumbers: true }} />
               </div>
@@ -664,7 +672,7 @@ Icon End
             <TabPanel>
               <div class="w-full flex justify-center gap-4 flex-wrap">
                 <Button color='primary' type='button' variant='outline' size='lg' class='shadow-md hover:shadow-2xl shadow-primary hover:shadow-red-600 hover:scale-125 hover:bg-gradient-to-tr from-[#55074e]  to-[#FE9A03] hover:animate-none animate-pulse'>
-                   Custom Tailwind Styles
+                  Custom Tailwind Styles
                 </Button>
               </div>
             </TabPanel>

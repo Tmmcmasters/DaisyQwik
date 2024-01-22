@@ -14,9 +14,15 @@ export interface ButtonProps {
   loadingStart?: boolean,
   loadingEnd?: boolean,
   class?: ClassList,
+  As?: 'Link' | "",
+  href?: string
 }
 
 export const Button = component$<ButtonProps>((props) => {
+
+  if (props.As === 'Link' && !props.href) {
+    throw new Error("href is required when As is set to 'Link'");
+  }
 
   return (
     <button class={`
@@ -46,9 +52,10 @@ export const Button = component$<ButtonProps>((props) => {
             'btn-normal'}
     ${props.shape == 'circle' ? 'btn-circle' :
         props.shape == 'square' ? 'btn-square' :
-    ''}
+          ''}
     ${props.class}
     ${props.disabled ? 'btn-disabled' : ''}
+    ${props.As == 'Link' ? 'pr-0 pl-0' : ''}
     ${props.size == 'xs' ? 'btn-xs' :
         props.size == 'sm' ? 'btn-sm' :
           props.size == 'md' ? 'btn-md' :
@@ -56,15 +63,17 @@ export const Button = component$<ButtonProps>((props) => {
               props.size == 'wide' ? 'btn-wide' :
                 props.size == 'block' ? 'btn-block' :
                   props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                  'btn-md'}
+                    'btn-md'}
+    
   }
     
     `}
       type={props.type}
       onClick$={props.onClick$}
-      disabled={props.disabled}>
-        {props.loadingStart == true ? <span class="loading loading-spinner"></span> : null}
-      <Slot  />
+      disabled={props.disabled}
+      >
+      {props.loadingStart == true ? <span class="loading loading-spinner"></span> : null}
+      {props.As == 'Link' ? <a href={props.href} class="pr-6 pl-6 h-full text-center flex align-middle justify-center items-center"><Slot /></a> : <Slot />}
       {props.loadingEnd == true ? <span class="loading loading-spinner"></span> : null}
     </button>
   );
