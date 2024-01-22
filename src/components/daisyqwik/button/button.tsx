@@ -64,14 +64,11 @@ export const Button = component$<ButtonProps>((props) => {
                 props.size == 'block' ? 'btn-block' :
                   props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
                     'btn-md'}
-    
-  }
-    
     `}
       type={props.type}
       onClick$={props.onClick$}
       disabled={props.disabled}
-      >
+    >
       {props.loadingStart == true ? <span class="loading loading-spinner"></span> : null}
       {props.As == 'Link' ? <a href={props.href} class="pr-6 pl-6 h-full text-center flex align-middle justify-center items-center"><Slot /></a> : <Slot />}
       {props.loadingEnd == true ? <span class="loading loading-spinner"></span> : null}
