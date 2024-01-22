@@ -11,9 +11,12 @@ export default component$(() => {
   return (
     <>
       <H1 text="Button:" />
-      <p class="text-warning">This is currently a work in progress...Check back soon! :)</p>
-      <p class="text-warning">Right and Left Keyboard to navigate :)</p>
+      <p class="text-warning font-bold underline underline-offset-8">Right and Left Keyboard to navigate :)</p>
+      <p class="text-error  font-bold">This is currently a <span class="underline underline-offset-2">work in progress</span>...Check back soon! :)</p>
+      <br></br>
       <div class='w-11/12 max-w-[721px] flex flex-col justify-start gap-8'>
+
+
         <div>
           <div id='button' class="mb-2 font-bold" ><a class="opacity-50" href='#button' >#</a> Button</div>
           <TabList groupName='tab1' size='md'>
@@ -106,12 +109,13 @@ export const Button = component$<ButtonProps>((props) => {
             </TabPanel>
           </TabList>
         </div>
-        <div>
 
+        <div>
           <div id='button-colors' class="mb-2 font-bold" ><a class="opacity-50" href='#button-colors'>#</a> Button Colors</div>
           <TabList groupName='tab2' size='md'>
             <Tab label="Preview" checked />
             <TabPanel>
+
               <div class="w-full flex justify-center gap-4 flex-wrap">
                 <Button color='neutral' type='button' variant='normal'>
                   Neutral
@@ -128,6 +132,15 @@ export const Button = component$<ButtonProps>((props) => {
                 <Button color='secondary' type='button' variant='normal'>
                   Secondary
                 </Button>
+                <Button color='warning' type='button' variant='normal'>
+                  Warning
+                </Button>
+                <Button color='error' type='button' variant='normal'>
+                  Error
+                </Button>
+                <Button color='success' type='button' variant='normal'>
+                  Success
+                </Button>
               </div>
             </TabPanel>
             <Tab label="Code" />
@@ -136,7 +149,7 @@ export const Button = component$<ButtonProps>((props) => {
                 <Code code={`<Button color='neutral' type='button' variant='normal'>
   Neutral
 </Button>
-<Button color='accent'type='button'variant='normal'>
+<Button color='accent' type='button' variant='normal'>
   Accent
 </Button>
 <Button color='info' type='button' variant='normal'>
@@ -147,13 +160,472 @@ export const Button = component$<ButtonProps>((props) => {
 </Button>
 <Button color='secondary' type='button' variant='normal'>
   Secondary
+</Button>
+<Button color='warning' type='button' variant='normal'>
+  Warning
+</Button>
+<Button color='error' type='button' variant='normal'>
+  Error
+</Button>
+<Button color='success' type='button' variant='normal'>
+  Success
 </Button>`
                 } lang="tsx" options={{ showLineNumbers: true }} />
               </div>
             </TabPanel>
-
           </TabList>
         </div>
+
+        <div>
+          <div id='button-outline' class="mb-2 font-bold" ><a class="opacity-50" href='#button-outline'>#</a> Outline Buttons</div>
+          <TabList groupName='tab3' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='neutral' type='button' variant='outline'>
+                  Neutral
+                </Button>
+                <Button color='accent' type='button' variant='outline'>
+                  Accent
+                </Button>
+                <Button color='info' type='button' variant='outline'>
+                  Info
+                </Button>
+                <Button color='primary' type='button' variant='outline'>
+                  Primary
+                </Button>
+                <Button color='secondary' type='button' variant='outline'>
+                  Secondary
+                </Button>
+                <Button color='warning' type='button' variant='outline'>
+                  Warning
+                </Button>
+                <Button color='error' type='button' variant='outline'>
+                  Error
+                </Button>
+                <Button color='success' type='button' variant='outline'>
+                  Success
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='neutral' type='button' variant='outline'>
+  Neutral
+</Button>
+<Button color='accent' type='button' variant='outline'>
+  Accent
+</Button>
+<Button color='info' type='button' variant='outline'>
+  Info
+</Button>
+<Button color='primary' type='button' variant='outline'>
+  Primary
+</Button>
+<Button color='secondary' type='button' variant='outline'>
+  Secondary
+</Button>
+<Button color='warning' type='button' variant='outline'>
+  Warning
+</Button>
+<Button color='error' type='button' variant='outline'>
+  Error
+</Button>
+<Button color='success' type='button' variant='outline'>
+  Success
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div id='button-ghost' class="mb-2 font-bold" ><a class="opacity-50" href='#button-ghost'>#</a> Ghost Buttons</div>
+          {/* <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium "></p>
+          </div> */}
+          <TabList groupName='tab4' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='neutral' type='button' variant='ghost'>
+                  Neutral
+                </Button>
+                <Button color='accent' type='button' variant='ghost'>
+                  Accent
+                </Button>
+                <Button color='info' type='button' variant='ghost'>
+                  Info
+                </Button>
+                <Button color='primary' type='button' variant='ghost'>
+                  Primary
+                </Button>
+                <Button color='secondary' type='button' variant='ghost'>
+                  Secondary
+                </Button>
+                <Button color='warning' type='button' variant='ghost'>
+                  Warning
+                </Button>
+                <Button color='error' type='button' variant='ghost'>
+                  Error
+                </Button>
+                <Button color='success' type='button' variant='ghost'>
+                  Success
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='neutral' type='button' variant='ghost'>
+  Neutral
+</Button>
+<Button color='accent' type='button' variant='ghost'>
+  Accent
+</Button>
+<Button color='info' type='button' variant='ghost'>
+  Info
+</Button>
+<Button color='primary' type='button' variant='ghost'>
+  Primary
+</Button>
+<Button color='secondary' type='button' variant='ghost'>
+  Secondary
+</Button>
+<Button color='warning' type='button' variant='ghost'>
+  Warning
+</Button>
+<Button color='error' type='button' variant='ghost'>
+  Error
+</Button>
+<Button color='success' type='button' variant='ghost'>
+  Success
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div id='button-link' class=" font-bold" ><a class="opacity-50" href='#button-link'>#</a> Button as a link</div>
+          <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">Link has default link styling. <br></br>You must add an <code>{`<a>`}</code> child element to the button to make it a link. </p>
+          </div>
+          <TabList groupName='tab5' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='neutral' variant='link'>
+                  <a href='/docs/button'>
+                    Link to nothing
+                  </a>
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='neutral' variant='link'>
+  <a href='/docs/button'>
+  Link to nothing
+  </a>
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+
+        <div class="flex flex-col gap-2">
+          <div id='button-active' class=" font-bold" ><a class="opacity-50" href='#button-active'>#</a> Active Buttons</div>
+          <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">Active means reducing hover/interactivity effects</p>
+          </div>
+          <TabList groupName='tab6' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='neutral' type='button' variant='normal' active>
+                  Normal Active
+                </Button>
+                <Button color='accent' type='button' variant='ghost' active>
+                  Ghost Active
+                </Button>
+                <Button color='info' type='button' variant='ghost' active>
+                  Ghost Active
+                </Button>
+                <Button color='primary' type='button' variant='outline' active>
+                  Outline Active
+                </Button>
+                <Button color='secondary' type='button' variant='link' active>
+                  Link Active
+                </Button>
+                <Button color='warning' type='button' variant='normal' active>
+                  Normal Active
+                </Button>
+                <Button color='error' type='button' variant='normal' active>
+                  Normal Active
+                </Button>
+                <Button color='success' type='button' variant='outline' active>
+                  Outline Active
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='neutral' type='button' variant='normal' active>
+  Normal Active
+</Button>
+<Button color='accent' type='button' variant='ghost' active>
+  Ghost Active
+</Button>
+<Button color='info' type='button' variant='ghost' active>
+  Ghost Active
+</Button>
+<Button color='primary' type='button' variant='outline' active>
+  Outline Active
+</Button>
+<Button color='secondary' type='button' variant='link' active>
+  Link Active
+</Button>
+<Button color='warning' type='button' variant='normal' active>
+  Normal Active
+</Button>
+<Button color='error' type='button' variant='normal' active>
+  Normal Active
+</Button>
+<Button color='success' type='button' variant='outline' active>
+  Outline Active
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div id='button-sizes' class=" font-bold" ><a class="opacity-50" href='#button-sizes'>#</a> Button Sizes</div>
+          {/* <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">Active means reducing hover/interactivity effects</p>
+          </div> */}
+          <TabList groupName='tab7' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='primary' type='button' variant='normal' size='xs'>
+                  Extra Small
+                </Button>
+                <Button color='primary' type='button' variant='normal' size='sm'>
+                  Small
+                </Button>
+                <Button color='primary' type='button' variant='normal' size='md'>
+                  Medium
+                </Button>
+                <Button color='primary' type='button' variant='normal' size='lg'>
+                  Large
+                </Button>
+                <Button color='primary' type='button' variant='normal' size='wide'>
+                  Wide
+                </Button>
+                <Button color='primary' type='button' variant='normal' size='block'>
+                  Block
+                </Button>
+                <Button color='primary' type='button' variant='normal' size='responsive'>
+                  Responsive
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='primary' type='button' variant='normal' size='xs'>
+  Extra Small
+</Button>
+<Button color='primary' type='button' variant='normal' size='sm'>
+  Small
+</Button>
+<Button color='primary' type='button' variant='normal' size='md'>
+  Medium
+</Button>
+<Button color='primary' type='button' variant='normal' size='lg'>
+  Large
+</Button>
+<Button color='primary' type='button' variant='normal' size='wide'>
+  Wide
+</Button>
+<Button color='primary' type='button' variant='normal' size='block'>
+  Block
+</Button>
+<Button color='primary' type='button' variant='normal' size='responsive'>
+  Responsive
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div id='button-disabled' class=" font-bold" ><a class="opacity-50" href='#button-disabled'>#</a> Disabled Buttons</div>
+          {/* <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">Active means reducing hover/interactivity effects</p>
+          </div> */}
+          <TabList groupName='tab8' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='primary' type='button' variant='outline' disabled>
+                  I am disabled
+                </Button>
+                <Button color='primary' type='button' variant='normal' disabled>
+                  I am disabled
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='primary' type='button' variant='outline'  disabled>
+  I am disabled
+</Button>
+<Button color='primary' type='button' variant='normal'  disabled>
+  I am disabled
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        
+
+        <div class="flex flex-col gap-2">
+          <div id='button-icons' class=" font-bold" ><a class="opacity-50" href='#button-icons'>#</a> Button Icons</div>
+          <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">You can simply add a icon to the button before or after your child text.</p>
+          </div>
+          <TabList groupName='tab10' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='primary' type='button' >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                  Icon Start
+                </Button>
+                <Button color='primary' type='button' >
+                  Icon End
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='primary' type='button' >
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+Icon Start
+</Button>
+<Button color='primary' type='button' >
+Icon End
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div id='button-shapes' class=" font-bold" ><a class="opacity-50" href='#button-shapes'>#</a> Button Shapes</div>
+          {/* <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">Active means reducing hover/interactivity effects</p>
+          </div> */}
+          <TabList groupName='tab9' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='primary' type='button' shape='circle'>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </Button>
+                <Button color='primary' type='button' shape='circle' variant='outline'>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </Button>
+                <Button color='primary' type='button' shape='square'>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </Button>
+                <Button color='primary' variant='outline' shape='square'>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='primary' type='button' shape='circle'>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+</Button>
+<Button color='primary' type='button' shape='circle' variant='outline'>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+</Button>
+<Button color='primary' type='button' shape='square'>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+</Button>
+<Button color='primary' variant='outline' shape='square'>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div id='button-loading' class=" font-bold" ><a class="opacity-50" href='#button-loading'>#</a> Button Loading</div>
+          <div class="bg-base-content bg-opacity-20 p-4 rounded-lg">
+            <p class="text-base font-medium drop-shadow-xl">You can use the props for loadingStart and loadingEnd.<br></br>Or.. You can use your own loader by putting before or after your child text.</p>
+          </div>
+          <TabList groupName='tab11' size='md'>
+            <Tab label="Preview" checked />
+            <TabPanel>
+              <div class="w-full flex justify-center gap-4 flex-wrap">
+                <Button color='primary' type='button' loadingStart >
+                  Loading Start
+                </Button>
+                <Button color='primary' type='button' loadingEnd >
+                  Loading End
+                </Button>
+                <Button color='primary' type='button' loadingStart></Button>
+                <Button color='primary' type='button' >
+                  <span class="loading loading-spinner"></span>
+                  No Props
+                </Button>
+              </div>
+            </TabPanel>
+            <Tab label="Code" />
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full  ">
+                <Code code={`<Button color='primary' type='button' loadingStart >
+  Loading Start
+</Button>
+<Button color='primary' type='button' loadingEnd >
+  Loading End
+</Button>
+<Button color='primary' type='button' loadingStart></Button>
+<Button color='primary' type='button' >
+  <span class="loading loading-spinner"></span>
+  No Props
+</Button>`
+                } lang="tsx" options={{ showLineNumbers: true }} />
+              </div>
+            </TabPanel>
+          </TabList>
+        </div>
+
       </div>
     </>
   );
