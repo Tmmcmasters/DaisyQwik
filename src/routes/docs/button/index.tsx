@@ -1,4 +1,5 @@
 import { $, component$ } from '@builder.io/qwik';
+import { DocumentHead } from '@builder.io/qwik-city';
 import { Button } from '~/components/daisyqwik/button/button';
 import { Code } from '~/components/daisyqwik/code/code';
 import { TabList, TabPanel, Tab } from '~/components/daisyqwik/tab/tab';
@@ -697,3 +698,13 @@ Icon End
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "QwikDaisy Buttons",
+  meta: [
+    {
+      name: "description",
+      content: "DaisyUI Button Component for Qwik",
+    },
+  ],
+};

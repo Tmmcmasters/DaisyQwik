@@ -1,4 +1,5 @@
 import { component$ } from '@builder.io/qwik';
+import { DocumentHead } from '@builder.io/qwik-city';
 import { Tab, TabList, TabPanel } from '~/components/daisyqwik/tab/tab';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 
@@ -37,3 +38,13 @@ export default component$(() => {
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "QwikDaisy Tabs",
+  meta: [
+    {
+      name: "description",
+      content: "DaisyUI Tab Component for Qwik",
+    },
+  ],
+};
