@@ -502,7 +502,7 @@ export const Button = component$<ButtonProps>((props) => {
           </TabList>
         </div>
 
-        
+
 
         <div class="flex flex-col gap-2">
           <div id='button-icons' class=" font-bold" ><a class="opacity-50" href='#button-icons'>#</a> Button Icons</div>
@@ -599,7 +599,8 @@ Icon End
                 <Button color='primary' type='button' loadingEnd >
                   Loading End
                 </Button>
-                <Button color='primary' type='button' loadingStart></Button>
+                <Button color='primary' type='button' loadingStart shape='square'></Button>
+                <Button color='primary' type='button' loadingStart shape='circle' variant='outline'></Button>
                 <Button color='primary' type='button' >
                   <span class="loading loading-spinner"></span>
                   No Props
@@ -615,7 +616,8 @@ Icon End
 <Button color='primary' type='button' loadingEnd >
   Loading End
 </Button>
-<Button color='primary' type='button' loadingStart></Button>
+<Button color='primary' type='button' loadingStart shape='square'></Button>
+<Button color='primary' type='button' loadingStart shape='circle' variant='outline'></Button>
 <Button color='primary' type='button' >
   <span class="loading loading-spinner"></span>
   No Props
