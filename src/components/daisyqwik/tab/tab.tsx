@@ -17,9 +17,9 @@ export const Tab = component$<TabProps>((props) => {
       type='radio'
       name={groupName}
       // role='radio'
-      class='!w-fit tab before:!hidden checked:!border-base-content !border-t-2  !border-r-2 !border-l-2 !border-b-0
-    checked:!-bottom-[1px]
-    text-xs md:text-sm
+      class=' tab before:!hidden checked:!border-base-content !w-[105%] !border-t-2  !border-r-2 !border-l-2 !border-b-0
+    checked:!-bottom-[1px] ::after!w-[105%]
+    text-xs md:text-sm 
     '
       aria-label={props.label}
       checked={props.checked}

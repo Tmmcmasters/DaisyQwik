@@ -51,7 +51,7 @@ export default component$(() => {
                 } lang="tsx" options={{ showLineNumbers: true }} />
               </div>
             </TabPanel>
-            <Tab label='Component Code' />
+            <Tab label='Component' />
             <TabPanel maxHeight='[500px]'>
               <div class="w-full  flex justify-start ">
                 <Code

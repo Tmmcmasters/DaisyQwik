@@ -97,7 +97,7 @@ export default component$(() => {
               </div>
 
             </TabPanel>
-            <Tab label="Component Code" />
+            <Tab label="Component" />
             <TabPanel>
               <div class="w-full flex justify-center">
                 <Table columnsList={[{ key: 1, value: 'Column 1' }, { key: 2, value: 'Column 2' }, { key: 3, value: 'Column 3' }]} />
