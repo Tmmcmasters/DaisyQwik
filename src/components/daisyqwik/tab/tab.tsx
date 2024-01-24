@@ -16,8 +16,8 @@ export const Tab = component$<TabProps>((props) => {
     <input
       type='radio'
       name={groupName}
-      role='t'
-      class='tab before:!hidden checked:!border-base-content !border-t-2  !border-r-2 !border-l-2 !border-b-0
+      // role='radio'
+      class='!w-fit tab before:!hidden checked:!border-base-content !border-t-2  !border-r-2 !border-l-2 !border-b-0
     checked:!-bottom-[1px]
     text-xs md:text-sm
     '
@@ -29,19 +29,30 @@ export const Tab = component$<TabProps>((props) => {
 
 export interface TabPanelProps {
   maxHeight?: '[500px]' | 'none' | '[100px]' | '80',
+  outline?: boolean
 }
 
 export const TabPanel = component$<TabPanelProps>((props: TabPanelProps) => {
   return (
     <div role='tabpanel' class={
       `tab-content bg-base-100 border-base-content border-2 border-t-2 rounded-box p-6 w-full 
-      overflow-y-auto ${props.maxHeight == '[500px]' ? 'max-h-[500px]' : 
+      overflow-y-auto 
+      `
+    }>
+      <div class={
+        `
+        bg-base-100
+        ${props.outline ? 'outline outline-2 outline-base-content' : ''} 
+        rounded-xl
+        overflow-y-auto
+        ${props.maxHeight == '[500px]' ? 'max-h-[500px]' : 
       props.maxHeight == '[100px]' ? 'max-h-[100px]' :
       props.maxHeight == '80' ? 'max-h-[80px]' : 'max-h-none'
     }
-      `
-    }>
+        `
+      }>
       <Slot />
+      </div>
     </div>
   )
 })
@@ -54,7 +65,7 @@ export interface TabListProps {
 export const TabList = component$<TabListProps>((props) => {
   useContextProvider(TabGroupContext, { groupName: props.groupName });
   return (
-    <div role="tablist" class={`tabs tabs-lifted tabs-${props.size}`}>
+    <div  class={`tabs tabs-lifted tabs-${props.size}`}>
       <Slot />
     </div>
   );
