@@ -8,7 +8,7 @@ import { H1 } from "~/components/daisyqwik/typography/h1/h1";
 export default component$(() => {
   return (
     <>
-        <H1 text="Getting Started" />
+        <H1 >Getting Started</H1>
         <p>This is currently a work in progress...Check back soon! :)</p>
         <p>This is the root of the docs</p>
         <p class="text-warning text-2xl font-bold underline drop-shadow-lg">No To Self....Update Component Code for elements</p>

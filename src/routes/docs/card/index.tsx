@@ -5,7 +5,7 @@ import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 export default component$(() => {
   return (
     <>
-        <H1 text="Card:" />
+        <H1  >Card:</H1>
         <p>This is currently a work in progress...Check back soon! :)</p>
     </>
   );

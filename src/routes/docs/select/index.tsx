@@ -13,12 +13,12 @@ export default component$(() => {
       <div class="w-11/12 max-w-[721px] flex flex-col justify-start gap-8">
 
         <div class="flex flex-col justify-start items-start gap-2">
-          <H1 >Table:</H1>
+          <H1 >Select:</H1>
           <p class="text-error  font-bold">This is currently a <span class="underline underline-offset-2">work in progress</span>...Check back soon! :)</p>
         </div>
 
         <div >
-          <div id='table' class="mb-2 font-bold" ><a class="opacity-50" href='#table' >#</a> Table</div>
+          <div id='select' class="mb-2 font-bold" ><a class="opacity-50" href='#select' >#</a> Select</div>
           <TabList size='md' groupName='tab1'>
             <Tab label="Preview" checked />
             <TabPanel>

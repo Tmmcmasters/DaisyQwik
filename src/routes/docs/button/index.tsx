@@ -11,7 +11,7 @@ export default component$(() => {
 
   return (
     <>
-      <H1 text="Button:" />
+      <H1 >Button:</H1>
       <p class="text-warning font-bold underline underline-offset-8">Right and Left Keyboard to navigate :)</p>
       <p class="text-error  font-bold">This is currently a <span class="underline underline-offset-2">work in progress</span>...Check back soon! :)</p>
       <br></br>

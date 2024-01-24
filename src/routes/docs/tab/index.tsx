@@ -6,7 +6,7 @@ import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 export default component$(() => {
   return (
     <>
-      <H1 text="Tab:" />
+      <H1 >Tabs:</H1>
       <p>This is currently a work in progress...Check back soon! :)</p>
       <br></br>
       
@@ -16,22 +16,22 @@ export default component$(() => {
 <TabList size="md" groupName='tab1'>
   <Tab label="Tab 1"  checked/>
   <TabPanel>
-    <H1 text="Tab 1" />
+    <H1 >Tab 1</H1>
   </TabPanel>
   <Tab label="Tab 2"  />
   <TabPanel>
-    <H1 text="Tab 2" />
+    <H1 >Tab 2</H1>
   </TabPanel>
 </TabList>
 <br></br>
 <TabList groupName='tab2' size="sm">
   <Tab label="Big tab"  checked/>
   <TabPanel>
-    <H1 text="Tab 1 of 2" />
+    <H1 >Big tab</H1>
   </TabPanel>
   <Tab label="Tab 2 of 2" />
   <TabPanel>
-    <H1 text="Tab 2 of 2" />
+    <H1 >Tab 2</H1>
   </TabPanel>
 </TabList>
       </div>
