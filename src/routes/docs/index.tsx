@@ -11,6 +11,7 @@ export default component$(() => {
         <H1 text="Getting Started" />
         <p>This is currently a work in progress...Check back soon! :)</p>
         <p>This is the root of the docs</p>
+        <p class="text-warning text-2xl font-bold underline drop-shadow-lg">No To Self....Update Component Code for elements</p>
     </>
   );
 });

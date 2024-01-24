@@ -16,7 +16,6 @@ export const Tab = component$<TabProps>((props) => {
     <input
       type='radio'
       name={groupName}
-      // role='radio'
       class=' tab before:!hidden checked:!border-base-content !w-[105%] !border-t-2  !border-r-2 !border-l-2 !border-b-0
     checked:!-bottom-[1px] ::after!w-[105%]
     text-xs md:text-sm 
