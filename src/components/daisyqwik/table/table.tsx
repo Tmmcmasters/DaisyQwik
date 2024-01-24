@@ -1,16 +1,16 @@
 import { Slot, component$ } from '@builder.io/qwik';
 
-export interface TableRowHeadProps {
-  rowHead: string
-}
+// export interface TableRowHeadProps {
+//   rowHead: string
+// }
 
-export const TableRowHead = component$<TableRowHeadProps>((props) => {
-  return (
-    <th>
-      {props.rowHead}
-    </th>
-  )
-})
+// export const TableRowHead = component$<TableRowHeadProps>((props) => {
+//   return (
+//     <th>
+//       {props.rowHead}
+//     </th>
+//   )
+// })
 
 export interface TableRowProps {
   rowCells: {
