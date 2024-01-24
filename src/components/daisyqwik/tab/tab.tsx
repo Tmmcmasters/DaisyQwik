@@ -35,8 +35,13 @@ export interface TabPanelProps {
 export const TabPanel = component$<TabPanelProps>((props: TabPanelProps) => {
   return (
     <div role='tabpanel' class={
-      `tab-content bg-base-100 border-base-content border-2 border-t-2 rounded-box p-6 w-full 
-      overflow-y-auto 
+      `tab-content bg-base-100 border-base-content border-2 border-t-2  p-6 w-full 
+      overflow-y-auto ${props.maxHeight == '[500px]' ? 'max-h-[500px]' : 
+      props.maxHeight == '[100px]' ? 'max-h-[100px]' :
+      props.maxHeight == '80' ? 'max-h-[80px]' : 'max-h-none'
+    }
+    outline outline-0 outline-base-content
+    rounded-s-lg rounded-e-sm
       `
     }>
       <div class={
@@ -44,11 +49,6 @@ export const TabPanel = component$<TabPanelProps>((props: TabPanelProps) => {
         bg-base-100
         ${props.outline ? 'outline outline-2 outline-base-content' : ''} 
         rounded-xl
-        overflow-y-auto
-        ${props.maxHeight == '[500px]' ? 'max-h-[500px]' : 
-      props.maxHeight == '[100px]' ? 'max-h-[100px]' :
-      props.maxHeight == '80' ? 'max-h-[80px]' : 'max-h-none'
-    }
         `
       }>
       <Slot />

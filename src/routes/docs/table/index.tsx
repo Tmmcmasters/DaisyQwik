@@ -60,7 +60,7 @@ export default component$(() => {
             </TabPanel>
             <Tab label="Code" />
             <TabPanel maxHeight='[500px]' >
-              <div class="w-full  ">
+              <div class="w-full">
               <Code options={{ showLineNumbers: true }} lang={'tsx'} code={`<Table
   columnsList={[{ key: 1, value'Column 1' }, { key: 2, value'Column 2' }, { key: 3, value'Column 3' }]}
   pinColumns
