@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
 import { Code } from '~/components/daisyqwik/code/code';
+import { Select } from '~/components/daisyqwik/select/select';
 import { Tab, TabList, TabPanel } from '~/components/daisyqwik/tab/tab';
 import { Table, TableRow } from '~/components/daisyqwik/table/table';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
@@ -21,86 +22,36 @@ export default component$(() => {
           <div id='select' class="mb-2 font-bold" ><a class="opacity-50" href='#select' >#</a> Select</div>
           <TabList size='md' groupName='tab1'>
             <Tab label="Preview" checked />
-            <TabPanel>
-              <div class="w-full flex justify-center max-h-96 ">
-                <Table
-                  columnsList={[{ key: 1, value: 'Column 1' }, { key: 2, value: 'Column 2' }, { key: 3, value: 'Column 3' }]}
-                  pinColumns
-                  footerLabels
-                >
-                  <TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  />
-                  <TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  />
-                  <TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  />
-                  <TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  />
-                  <TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  />
-                  <TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  /><TableRow
-                    rowCells={[{ key: 1, value: 'Cell 1' }, { key: 2, value: 'Cell 2' }, { key: 3, value: 'Cell 3' }]}
-                    hover
-                  />
-                </Table>
+            <TabPanel maxHeight='[500px]'>
+              <div class="w-full flex justify-center  ">
+                <Select placeholder='Pick one'
+                options={[
+                  { key: 1, value: 'Star Wars' },
+                  { key: 2, value: 'Harry Potter' },
+                  { key: 3, value: 'Lord of the Rings' },
+                  { key: 4, value: 'Planet of the Apes' },
+                  { key: 5, value: 'Star Trek' },
+                ]}
+                topAltLabel='Top Alt Label'
+                topLabel='Pick your favorite fantasy movie'
+                bottomAltSubtitle='Bottom Alt Subtitle'
+                bottomSubtitle='Bottom Subtitle'
+                type='normal'
+                color='neutral'
+                required
+                />
               </div>
             </TabPanel>
             <Tab label="Code" />
             <TabPanel maxHeight='[500px]' >
               <div class="w-full">
-              <Code options={{ showLineNumbers: true }} lang={'tsx'} code={`<Table
-  columnsList={[{ key: 1, value'Column 1' }, { key: 2, value'Column 2' }, { key: 3, value'Column 3' }]}
-  pinColumns
-  footerLabels
->
-  <TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  />
-  <TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  />
-  <TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  />
-  <TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  />
-  <TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  />
-  <TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  /><TableRow
-    rowCells={[{ key: 1, value: '1' }, { key: 2, value: 'Cell 2' { key: 3, value: 'Cell 3' }]}
-    hover
-  />
-</Table>`} />
+              <Code options={{ showLineNumbers: true }} lang={'tsx'} code={``} />
               </div>
 
             </TabPanel>
             <Tab label="Component" />
             <TabPanel>
-              <div class="w-full flex justify-center">
-                <Table columnsList={[{ key: 1, value: 'Column 1' }, { key: 2, value: 'Column 2' }, { key: 3, value: 'Column 3' }]} />
+              <div class="w-full flex justify-center ">
               </div>
             </TabPanel>
           </TabList>
