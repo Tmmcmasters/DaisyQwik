@@ -1,6 +1,7 @@
 {
-  "name": "my-qwik-basic-starter",
-  "description": "Demo App with Routing built-in (recommended)",
+  "name": "qwikdaisy",
+  "description": "UI Library for Qwik based on daisyUI",
+  "version": "0.0.1",
   "engines": {
     "node": ">=15.0.0"
   },
