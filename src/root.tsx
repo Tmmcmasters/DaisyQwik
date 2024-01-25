@@ -17,7 +17,7 @@ export default component$(() => {
    */
 
   return (
-    <QwikCityProvider data-theme="black" >
+    <QwikCityProvider data-theme="darkV2" >
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />

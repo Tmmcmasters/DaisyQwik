@@ -38,6 +38,7 @@ export default component$(() => {
                 bottomSubtitle='Bottom Subtitle'
                 type='normal'
                 color='neutral'
+                name='select1'
                 required
                 />
               </div>

@@ -1,4 +1,4 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, createContextId, useContext, useContextProvider } from '@builder.io/qwik';
 
 export interface SelectProps {
   options: {
@@ -16,10 +16,16 @@ export interface SelectProps {
   disabled?: boolean,
   size?: 'xs' | 'sm' | 'md' | 'lg',
   type: 'normal' | 'bordered' | 'ghost',
-  color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error'
+  color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
+  name: string,
 }
 
+export const SelectNameContext = createContextId<{ selectName: string }>('select.name.context');
+
 export const Select = component$<SelectProps>((props) => {
+  useContextProvider(SelectNameContext, { selectName: props.name });
+  const selectName = (useContext(SelectNameContext) as { selectName: string }).selectName;
+
   return (
     // <label class="form-control w-full max-w-xs">
     <div class={
@@ -28,7 +34,7 @@ export const Select = component$<SelectProps>((props) => {
       ${props.maxWidth ? `max-w-${props.maxWidth}` : 'max-w-md'} 
       `
     }>
-      <div class="label">
+      <label class="label" for={selectName}>
         {
           props.topLabel ? <span class="label-text">
             {props.topLabel}
@@ -39,8 +45,8 @@ export const Select = component$<SelectProps>((props) => {
         {
           props.topAltLabel ? <span class="label-text-alt">{props.topAltLabel}{props.required ? <span class="text-error font-bold ml-1">*</span> : null}</span> : null
         }
-      </div>
-      <select class={`
+      </label>
+      <select name={selectName} id={selectName} class={`
         select  w-full 
         font-semibold
         ${props.invalid ? '!select-error' : ''}
