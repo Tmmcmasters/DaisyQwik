@@ -6,6 +6,9 @@ export const Menu = component$(() => {
       <li>
         <details open>
           <summary>
+            <span>
+          <svg width="18" height="18" viewBox="0 0 48 48" class="text-orange-400 h-5 w-5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7H16C20.4183 7 24 10.5817 24 15V42C24 38.6863 21.3137 36 18 36H5V7Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="bevel"></path><path d="M43 7H32C27.5817 7 24 10.5817 24 15V42C24 38.6863 26.6863 36 30 36H43V7Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="bevel"></path></svg>
+            </span>
             <a href="/docs">Docs</a>
           </summary>
           <ul>
@@ -195,7 +198,25 @@ export const Menu = component$(() => {
               </a>
                   </li>
                   <li>
-                    <a href="/docs">Dropdown</a>
+                    <a href="/docs/dropdown">
+                      Dropdown
+                      <div class="badge badge-warning gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          class="inline-block h-4 w-4 stroke-current"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                        </svg>
+                        In Progress
+                      </div>
+                      </a>
                   </li>
                   <li>
                     <a href="/docs">Modal</a>
@@ -235,6 +256,27 @@ export const Menu = component$(() => {
                         In Progress
                       </div>
                       </a>
+                  </li>
+                  <li>
+                    <a href="/docs/table">
+                      Table
+                      <div class="badge badge-warning gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          class="inline-block h-4 w-4 stroke-current"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                        </svg>
+                        In Progress
+                      </div>
+                    </a>
                   </li>
                 </ul>
               </details>
@@ -290,6 +332,29 @@ export const Menu = component$(() => {
                   </span>
                   <a href="/docs">Data Input</a>
                 </summary>
+                <ul>
+                  <li>
+                    <a href="/docs/select">
+                      Select
+                      <div class="badge badge-warning gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          class="inline-block h-4 w-4 stroke-current"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          ></path>
+                        </svg>
+                        In Progress
+                      </div>
+                      </a>
+                  </li>
+                </ul>
               </details>
             </li>
             <li>

@@ -17,11 +17,10 @@ export default component$(() => {
    */
 
   return (
-    <QwikCityProvider data-theme="black" >
+    <QwikCityProvider data-theme="darkV2" >
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
-        <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
