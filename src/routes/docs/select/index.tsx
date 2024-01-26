@@ -3,7 +3,6 @@ import { DocumentHead } from '@builder.io/qwik-city';
 import { Code } from '~/components/daisyqwik/code/code';
 import { Select } from '~/components/daisyqwik/select/select';
 import { Tab, TabList, TabPanel } from '~/components/daisyqwik/tab/tab';
-import { Table, TableRow } from '~/components/daisyqwik/table/table';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 
 export default component$(() => {

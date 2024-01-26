@@ -1,4 +1,4 @@
-import { PropFunction, Slot, component$, createContextId, useContext, useContextProvider, useSignal } from '@builder.io/qwik';
+import {  component$, createContextId, useContext, useContextProvider, useSignal } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 export interface DropdownProps {
@@ -21,7 +21,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
   const value = useSignal<string | null>(null)
   const mouseLeft = useSignal(true)
   const dropdownDetails = useSignal<any>(null)
-  const dropdownOpen = useSignal(false)
+  // const dropdownOpen = useSignal(false)
 
 
 
