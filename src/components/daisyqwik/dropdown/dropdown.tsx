@@ -1,4 +1,4 @@
-import { component$, createContextId, useContext, useContextProvider, useSignal } from '@builder.io/qwik';
+import { $, component$, createContextId, useContext, useContextProvider, useSignal, useTask$, useId } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 export interface DropdownProps {
@@ -10,6 +10,7 @@ export interface DropdownProps {
     // onClick$?: PropFunction<() => void>
   }[],
   dropdownId: string,
+  closeOnOutsideClick?: boolean,
 }
 
 export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
@@ -22,44 +23,26 @@ export const Dropdown = component$<DropdownProps>((props) => {
   // const mouseLeft = useSignal(true)
   const dropdownDetails = useSignal<any>(null)
   const focusedInDropdown = useSignal(false)
+  const onClickHandler = useSignal<any>(null)
 
-
+  useTask$(async () => {
+    if (props.closeOnOutsideClick) {
+      onClickHandler.value = $((event: MouseEvent) => {
+        const dropdownElement = document.getElementById(dropdownId)
+        if (event.target == dropdownElement || dropdownElement?.contains(event.target as Node)) {
+        } else {
+          if (dropdownDetails.value != null) {
+            dropdownDetails.value.open = false
+          }
+        }
+      })
+    }
+  });
 
   return (
     <>
       <div
-        // onMouseOut$={
-        //   () => {
-        //     mouseLeft.value = true
-        //   }
-        // }
-
-        // onMouseEnter$={
-        //   () => {
-        //     mouseLeft.value = false
-        //   }
-        // }
-
-        document:onTouchEnd$={
-          (event) => {
-            console.log(event)
-          }
-        }
-
-        document:onClick$={
-          (event) => {
-
-            const dropdownElement = document.getElementById(dropdownId)
-            
-            if (event.target == dropdownElement || dropdownElement?.contains(event.target as Node)) {
-            } else {
-              if (dropdownDetails.value != null) {
-                dropdownDetails.value.open = false
-              }
-            }
-          }
-        }
-
+        document:onClick$={onClickHandler.value}
       >
 
         <details class="dropdown"
