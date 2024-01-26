@@ -1,4 +1,4 @@
-import {  component$, createContextId, useContext, useContextProvider, useSignal } from '@builder.io/qwik';
+import { component$, createContextId, useContext, useContextProvider, useSignal } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 export interface DropdownProps {
@@ -19,52 +19,56 @@ export const Dropdown = component$<DropdownProps>((props) => {
   const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
 
   const value = useSignal<string | null>(null)
-  const mouseLeft = useSignal(true)
+  // const mouseLeft = useSignal(true)
   const dropdownDetails = useSignal<any>(null)
-  // const dropdownOpen = useSignal(false)
+  const focusedInDropdown = useSignal(false)
 
 
 
   return (
     <>
       <div
-        onMouseOut$={
-          () => {
-            mouseLeft.value = true
+        // onMouseOut$={
+        //   () => {
+        //     mouseLeft.value = true
+        //   }
+        // }
+
+        // onMouseEnter$={
+        //   () => {
+        //     mouseLeft.value = false
+        //   }
+        // }
+
+        document:onTouchEnd$={
+          (event) => {
+            console.log(event)
           }
         }
 
-        onMouseEnter$={
-          () => {
-            mouseLeft.value = false
+        document:onClick$={
+          (event) => {
+
+            const dropdownElement = document.getElementById(dropdownId)
+            
+            if (event.target == dropdownElement || dropdownElement?.contains(event.target as Node)) {
+            } else {
+              if (dropdownDetails.value != null) {
+                dropdownDetails.value.open = false
+              }
+            }
           }
         }
-
 
       >
-
 
         <details class="dropdown"
           id={dropdownId}
 
-
-
-          // onFocusOut$={
-          //   (event: FocusEvent, details: any) => {
-          //     if (mouseLeft.value == true) {
-          //       setTimeout(() => {
-
-          //         details.open = false
-          //       }, 100);
-          //     }
-          //   }
-          // }
-
           onFocusIn$={
             (event: FocusEvent, details: any) => {
-              setTimeout(() => {
-                details.open = true
-              }, 100);
+              focusedInDropdown.value = true
+
               dropdownDetails.value = details
             }
           }
@@ -82,17 +86,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           </Button>
           <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm  
           gap-1 font-semibold`}
-            onFocusOut$={
-              (event: FocusEvent, details: any) => {
-                if (mouseLeft.value == true) {
-                  console.log(event, details)
-                  setTimeout(() => {
 
-                    dropdownDetails.value.open = false
-                  }, 100);
-                }
-              }
-            }
           >
             <>
               {
@@ -119,14 +113,6 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       <Button variant="outline" color='primary' tabIndex={1} size='sm'>
                         {item.value}
                       </Button>
-                      {/* <a
-                    href={`javascript:;`}
-                    >
-                    {item.value}
-                    <span>
-
-                    </span>
-                    </a> */}
                     </li>
                   )
                 })

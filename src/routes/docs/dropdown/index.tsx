@@ -33,6 +33,16 @@ export default component$(() => {
                 ]}
                 dropdownId='dropdown1'
                 />
+                <Dropdown
+                  placeholder='Click 2'
+                  dropdownItems={[
+                    { key: 1,
+                      value: 'Star Wars',
+                    },
+                    { key: 2, value: 'Harry Potter' },
+                  ]}
+                  dropdownId='dropdown2'
+                />
               </div>
             </TabPanel>
             <Tab label="Code" />
