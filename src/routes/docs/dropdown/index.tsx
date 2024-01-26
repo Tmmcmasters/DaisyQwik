@@ -17,6 +17,7 @@ export default component$(() => {
         <div class="flex flex-col justify-start items-start gap-2">
           <H1 >Dropdown:</H1>
           <p class="text-error  font-bold">This is currently a <span class="underline underline-offset-2">work in progress</span>...Check back soon! :)</p>
+          <p class="text-warning">I need to fix focus issues where you can't tab all the way through the dropdown and also close on outside click</p>
         </div>
 
         <div >

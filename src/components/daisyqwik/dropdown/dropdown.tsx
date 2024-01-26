@@ -19,100 +19,123 @@ export const Dropdown = component$<DropdownProps>((props) => {
   const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
 
   const value = useSignal<string | null>(null)
-  const mouseLeft = useSignal(false)
+  const mouseLeft = useSignal(true)
+  const dropdownDetails = useSignal<any>(null)
+  const dropdownOpen = useSignal(false)
 
 
 
   return (
     <>
       <div
-      onMouseOut$={
-        () => {
-          mouseLeft.value = true
+        onMouseOut$={
+          () => {
+            mouseLeft.value = true
+          }
         }
-      }
-      
-      onMouseEnter$={
-        () => {
-          mouseLeft.value = false
+
+        onMouseEnter$={
+          () => {
+            mouseLeft.value = false
+          }
         }
-      }
+
+
       >
 
-      
-      <details class="dropdown" 
-        id={dropdownId}
-        
-        
 
-        onFocusOut$={
-          (event: FocusEvent, details: any) => {
-            if (mouseLeft.value == true) {
+        <details class="dropdown"
+          id={dropdownId}
+
+
+
+          // onFocusOut$={
+          //   (event: FocusEvent, details: any) => {
+          //     if (mouseLeft.value == true) {
+          //       setTimeout(() => {
+
+          //         details.open = false
+          //       }, 100);
+          //     }
+          //   }
+          // }
+
+          onFocusIn$={
+            (event: FocusEvent, details: any) => {
               setTimeout(() => {
-                
-                details.open = false
+                details.open = true
               }, 100);
+              dropdownDetails.value = details
             }
           }
-        }
 
-        onFocusIn$={
-          (event: FocusEvent, details: any) => {
-            setTimeout(() => {
-              details.open = true
-            }, 100);
-          }
-        }
-
-      >
-        <Button tabIndex={0} variant="normal" color='primary'
-          As='summary'
-          
         >
-          <>
-            {
-              value.value ? value.value : props.placeholder
+          <Button tabIndex={0} variant="normal" color='primary'
+            As='summary'
+
+          >
+            <>
+              {
+                value.value ? value.value : props.placeholder
+              }
+            </>
+          </Button>
+          <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm  
+          gap-1 font-semibold`}
+            onFocusOut$={
+              (event: FocusEvent, details: any) => {
+                if (mouseLeft.value == true) {
+                  console.log(event, details)
+                  setTimeout(() => {
+
+                    dropdownDetails.value.open = false
+                  }, 100);
+                }
+              }
             }
-          </>
-        </Button>
-        <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm  
-          gap-1 font-semibold`} >
-          <>
-            {
-              props.dropdownItems.map((item) => {
-                return (
-                  <li class={
-                    ``
-                  }
-                    key={item.key}
-                    onClick$={
-                      () => {
-                        value.value = item.value
-                      }
+          >
+            <>
+              {
+                props.dropdownItems.map((item) => {
+                  return (
+                    <li class={
+                      `
+
+                    `
                     }
-                    onTouchEnd$={
-                      () => {
-                        value.value = item.value
+                      key={item.key}
+                      onClick$={
+                        () => {
+                          value.value = item.value
+                        }
                       }
-                    }
-                  >
-                    <a
+                      onTouchEnd$={
+                        () => {
+                          value.value = item.value
+                        }
+                      }
+
+                    >
+                      <Button variant="outline" color='primary' tabIndex={1} size='sm'>
+                        {item.value}
+                      </Button>
+                      {/* <a
                     href={`javascript:;`}
                     >
                     {item.value}
                     <span>
-                      
+
                     </span>
-                    </a>
-                  </li>
-                )
-              })
-            }
-          </>
-        </ul>
-      </details>
+                    </a> */}
+                    </li>
+                  )
+                })
+              }
+            </>
+          </ul>
+        </details>
       </div>
-      </>
+    </>
   );
 });
 
