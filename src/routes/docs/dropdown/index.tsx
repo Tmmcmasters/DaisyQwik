@@ -33,6 +33,7 @@ export default component$(() => {
                 ]}
                 closeOnOutsideClick
                 dropdownId='dropdown1'
+                onSelectionChange$={(event) => {console.log(event)}}
                 />
               </div>
             </TabPanel>

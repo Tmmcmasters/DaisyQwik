@@ -1,4 +1,4 @@
-import { $, component$, createContextId, useContext, useContextProvider, useSignal, useTask$, useId } from '@builder.io/qwik';
+import { $, component$, createContextId, useContext, useContextProvider, useSignal, useTask$, useId, PropFunction } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 export interface DropdownProps {
@@ -11,6 +11,7 @@ export interface DropdownProps {
   }[],
   dropdownId: string,
   closeOnOutsideClick?: boolean,
+  onSelectionChange$?: PropFunction<(arg0: any) => void>,
 }
 
 export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
@@ -69,7 +70,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           </Button>
           <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm  
           gap-1 font-semibold`}
-
+              
           >
             <>
               {
@@ -82,20 +83,23 @@ export const Dropdown = component$<DropdownProps>((props) => {
                     }
                       key={item.key}
                       onClick$={
-                        () => {
+                        (event: PointerEvent) => {
                           value.value = item.value
+                          props.onSelectionChange$?.(event)
                         }
                       }
                       onTouchEnd$={
-                        () => {
+                        (event: TouchEvent) => {
                           value.value = item.value
+                          props.onSelectionChange$?.(event)
                         }
                       }
-
                     >
+
                       <Button variant="outline" color='primary' tabIndex={1} size='sm'>
                         {item.value}
                       </Button>
+
                     </li>
                   )
                 })
