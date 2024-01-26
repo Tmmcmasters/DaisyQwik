@@ -1,5 +1,5 @@
 import { Slot, component$ } from '@builder.io/qwik';
-import type { ClassList, Component, PropFunction } from '@builder.io/qwik';
+import type { ClassList,  PropFunction } from '@builder.io/qwik';
 
 
 export interface ButtonProps {
