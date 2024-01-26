@@ -1,4 +1,4 @@
-import { PropFunction, Slot, component$, useSignal } from '@builder.io/qwik';
+import { PropFunction, Slot, component$, createContextId, useContext, useContextProvider, useSignal } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 export interface DropdownProps {
@@ -9,45 +9,65 @@ export interface DropdownProps {
     value: string,
     // onClick$?: PropFunction<() => void>
   }[],
+  dropdownId: string,
 }
 
+export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
+
 export const Dropdown = component$<DropdownProps>((props) => {
+  useContextProvider(DropdownIdContext, { dropdownId: props.dropdownId });
+  const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
+
   const value = useSignal<string | null>(null)
-  const open = useSignal(false)
   const mouseLeft = useSignal(false)
 
 
 
   return (
-    <div
-      onMouseLeave$={
+    <>
+      <div
+      onMouseOut$={
         () => {
           mouseLeft.value = true
         }
       }
-
+      
       onMouseEnter$={
         () => {
           mouseLeft.value = false
         }
       }
+      >
 
-      onFocusOut$={
-        () => {
-          if (mouseLeft.value == true) {
-            open.value = false
-          }
-        }
-      }
-    >
-      <div class="dropdown" >
-        <Button tabIndex={0} variant="normal" color='primary'
-          As='div'
-          onFocusIn$={
-            () => {
-              open.value = true
+      
+      <details class="dropdown" 
+        id={dropdownId}
+        
+        
+
+        onFocusOut$={
+          (event: FocusEvent, details: any) => {
+            if (mouseLeft.value == true) {
+              setTimeout(() => {
+                
+                details.open = false
+              }, 100);
             }
           }
+        }
+
+        onFocusIn$={
+          (event: FocusEvent, details: any) => {
+            setTimeout(() => {
+              details.open = true
+            }, 100);
+          }
+        }
+
+      >
+        <Button tabIndex={0} variant="normal" color='primary'
+          As='summary'
+          
         >
           <>
             {
@@ -55,16 +75,14 @@ export const Dropdown = component$<DropdownProps>((props) => {
             }
           </>
         </Button>
-        <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm   ${open.value == true ? '' : 'hidden'}`} >
+        <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm  
+          gap-1 font-semibold`} >
           <>
             {
               props.dropdownItems.map((item) => {
                 return (
                   <li class={
-                    `
-                  hover:bg-primary hover:text-base-100
-                  p-2 rounded-box
-                  `
+                    ``
                   }
                     key={item.key}
                     onClick$={
@@ -72,17 +90,29 @@ export const Dropdown = component$<DropdownProps>((props) => {
                         value.value = item.value
                       }
                     }
-
+                    onTouchEnd$={
+                      () => {
+                        value.value = item.value
+                      }
+                    }
                   >
+                    <a
+                    href={`javascript:;`}
+                    >
                     {item.value}
+                    <span>
+                      
+                    </span>
+                    </a>
                   </li>
                 )
               })
             }
           </>
         </ul>
+      </details>
       </div>
-    </div>
+      </>
   );
 });
 

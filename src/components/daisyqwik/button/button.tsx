@@ -17,7 +17,7 @@ export interface ButtonProps {
   loadingStart?: boolean,
   loadingEnd?: boolean,
   class?: ClassList,
-  As?: 'Link' | "div" | "",
+  As?: 'Link' | "summary" | "",
   href?: string,
   tabIndex?: number,
   role?: "button" | string,
@@ -33,10 +33,10 @@ export const Button = component$<ButtonProps>((props) => {
     <>
 
       {
-        props.As == 'div' ? <div
+        props.As == 'summary' ? <summary
           tabIndex={props.tabIndex}
           class={`
-    
+    m-1
     btn ${props.color == 'primary' ? 'btn-primary' :
               props.color == 'secondary' ? 'btn-secondary' :
                 props.color == 'accent' ? 'btn-accent' :
@@ -86,7 +86,7 @@ export const Button = component$<ButtonProps>((props) => {
           {props.loadingStart == true ? <span class="loading loading-spinner"></span> : null}
           <Slot />
           {props.loadingEnd == true ? <span class="loading loading-spinner"></span> : null}
-        </div> :
+        </summary> :
           <button
             tabIndex={props.tabIndex}
             class={`

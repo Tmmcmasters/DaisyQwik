@@ -32,6 +32,7 @@ export default component$(() => {
                   },
                   { key: 2, value: 'Harry Potter' },
                 ]}
+                dropdownId='dropdown1'
                 />
               </div>
             </TabPanel>
