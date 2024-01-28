@@ -27,7 +27,7 @@ export default component$(() => {
                 <Dropdown placeholder='Click'
                 dropdownItems={[
                   { key: 1, 
-                    value: 'Star Wars',
+                    value: 'Star Wars blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
                   },
                   { key: 2, value: 'Harry Potter' },
                 ]}

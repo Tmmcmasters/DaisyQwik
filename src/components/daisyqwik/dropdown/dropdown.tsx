@@ -11,6 +11,7 @@ export interface DropdownProps {
   }[],
   dropdownId: string,
   closeOnOutsideClick?: boolean,
+  maxWidthInPixels?: string,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
 }
 
@@ -44,9 +45,10 @@ export const Dropdown = component$<DropdownProps>((props) => {
     <>
       <div
         document:onClick$={onClickHandler.value}
+        class="flex justify-center items-center h-fit  w-fit"
       >
 
-        <details class="dropdown"
+        <details class="dropdown  dropdown-bottom"
           id={dropdownId}
 
           onFocusIn$={
@@ -68,7 +70,9 @@ export const Dropdown = component$<DropdownProps>((props) => {
               }
             </>
           </Button>
-          <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box w-52 text-sm  
+          <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box min-w-fit !w-[max-content]
+          ${props.maxWidthInPixels ? props.maxWidthInPixels : 'max-w-[250px]'}
+           text-sm  text-
           gap-1 font-semibold`}
               
           >
@@ -78,25 +82,33 @@ export const Dropdown = component$<DropdownProps>((props) => {
                   return (
                     <li class={
                       `
-
+                      
+                      min-w-fit
+                      w-auto
                     `
                     }
                       key={item.key}
                       onClick$={
                         (event: PointerEvent) => {
                           value.value = item.value
-                          props.onSelectionChange$?.(event)
+                          props.onSelectionChange$?.({
+                            event: event,
+                            item: item
+                          })
                         }
                       }
                       onTouchEnd$={
                         (event: TouchEvent) => {
                           value.value = item.value
-                          props.onSelectionChange$?.(event)
+                          props.onSelectionChange$?.({
+                            event: event,
+                            item: item,
+                          })
                         }
                       }
                     >
 
-                      <Button variant="outline" color='primary' tabIndex={1} size='sm'>
+                      <Button variant="outline" color='primary' tabIndex={1} size='fit-content' >
                         {item.value}
                       </Button>
 

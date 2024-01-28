@@ -1,5 +1,5 @@
 import { Slot, component$ } from '@builder.io/qwik';
-import type { ClassList,  PropFunction } from '@builder.io/qwik';
+import type { ClassList, PropFunction } from '@builder.io/qwik';
 
 
 export interface ButtonProps {
@@ -11,7 +11,7 @@ export interface ButtonProps {
   type?: 'submit' | 'reset' | 'button',
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
   variant?: 'link' | 'ghost' | 'outline' | 'normal',
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'wide' | 'block' | 'responsive',
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'wide' | 'block' | 'responsive' | 'fit-content',
   active?: boolean,
   shape?: 'circle' | 'square',
   loadingStart?: boolean,
@@ -73,7 +73,8 @@ export const Button = component$<ButtonProps>((props) => {
                     props.size == 'wide' ? 'btn-wide' :
                       props.size == 'block' ? 'btn-block' :
                         props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                          'btn-md'}
+                          props.size == 'fit-content' ? 'btn-xs ' :
+                            'btn-md'}
     `}
           // type={props.type}
           onClick$={props.onClick$}
@@ -128,7 +129,8 @@ export const Button = component$<ButtonProps>((props) => {
                       props.size == 'wide' ? 'btn-wide' :
                         props.size == 'block' ? 'btn-block' :
                           props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                            'btn-md'}
+                            props.size == 'fit-content' ? 'btn-xs h-fit' :
+                              'btn-md'}
     `}
             type={props.type}
             onClick$={props.onClick$}
