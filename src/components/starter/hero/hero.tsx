@@ -6,14 +6,18 @@ import { Button } from "~/components/daisyqwik/button/button";
 
 export default component$(() => {
   return (
-    <div class="bg-base flex flex-col justify-center align-middle items-center p-12 text-start">
+    <div class="bg-base flex flex-col justify-center align-middle items-center p-12 text-start gap-4">
       <div class="bg-base flex flex-row justify-start align-middle items-center">
-        <h1 class=""><span class="font-bold text-[#FE9A03] bg-gradient-to-tr from-[#1AD0A5] from-30% to-[#FE9A03] to-50% text-transparent bg-clip-text drop-shadow-lg">daisy</span><span class="text-[#1AD0A5] font-bold drop-shadow-lg">UI </span><span class="text-base-content drop-shadow-lg">Components</span></h1>
+        <h1><span class="text-purple-300 font-bold drop-shadow-lg">q</span><span class="text-purple-400 font-bold drop-shadow-lg">w</span><span class="text-purple-500 font-bold drop-shadow-lg">i</span><span class="text-purple-600 font-bold drop-shadow-lg">k</span><span class="text-base-content font-semibold drop-shadow-lg"> components</span></h1>
+       
       </div>
+      <div class="bg-base flex flex-row justify-center align-middle items-center">
+        <h1 class=" text-base-content drop-shadow-lg">based on <span class="font-bold text-[#FE9A03] bg-gradient-to-tr from-[#1AD0A5] from-30% to-[#FE9A03] to-50% text-transparent bg-clip-text drop-shadow-lg">daisy</span><span class="text-[#1AD0A5] font-bold drop-shadow-lg">UI </span>
+        </h1>
+      </div>
+      
 
-      <div class="bg-base flex flex-row justify-center align-middle items-center mt-3">
-        <h1 class=" text-base-content drop-shadow-lg">for <span class="text-purple-300 font-bold drop-shadow-lg">q</span><span class="text-purple-400 font-bold drop-shadow-lg">w</span><span class="text-purple-500 font-bold drop-shadow-lg">i</span><span class="text-purple-600 font-bold drop-shadow-lg">k</span></h1>
-      </div>
+      
 
       <div class="bg-base flex flex-row justify-center align-middle items-center font-bold gap-3 mt-20 flex-wrap ">
         <a href="https://qwik.builder.io" target="_blank" text="Qwik Framework Website" class="border-2 border-neutral-500 hover:border-base-content transition-all duration-200 ease-in-out  rounded-btn hover:shadow-xl hover:shadow-purple-700">
