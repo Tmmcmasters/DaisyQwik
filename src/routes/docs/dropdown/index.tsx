@@ -27,13 +27,14 @@ export default component$(() => {
                 <Dropdown placeholder='Click'
                 dropdownItems={[
                   { key: 1, 
-                    value: 'Star Wars blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
+                    value: 'Option One',
                   },
-                  { key: 2, value: 'Harry Potter' },
+                  { key: 2, value: 'Option Two' },
                 ]}
                 color='neutral'
                 closeOnOutsideClick
                 dropdownId='dropdown1'
+                // dropdownPosition='top'
                 onSelectionChange$={(event) => {console.log(event)}}
                 />
               </div>

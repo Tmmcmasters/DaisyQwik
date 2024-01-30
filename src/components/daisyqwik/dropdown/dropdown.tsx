@@ -10,6 +10,7 @@ export interface DropdownProps {
     value: string,
     // onClick$?: PropFunction<() => void>
   }[],
+  dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId: string,
   closeOnOutsideClick?: boolean,
   maxWidthInPixels?: string,
@@ -49,7 +50,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
         class="flex justify-center items-center h-fit  w-fit"
       >
 
-        <details class="dropdown  dropdown-bottom"
+        <details class={`dropdown dropdown-${props.dropdownPosition ? props.dropdownPosition : 'bottom'}`}
           id={dropdownId}
 
           onFocusIn$={
