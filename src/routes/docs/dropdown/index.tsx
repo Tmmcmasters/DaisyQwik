@@ -31,6 +31,7 @@ export default component$(() => {
                   },
                   { key: 2, value: 'Harry Potter' },
                 ]}
+                color='neutral'
                 closeOnOutsideClick
                 dropdownId='dropdown1'
                 onSelectionChange$={(event) => {console.log(event)}}

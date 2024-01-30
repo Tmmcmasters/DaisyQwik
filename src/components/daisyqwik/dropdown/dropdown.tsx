@@ -1,6 +1,7 @@
 import { $, component$, createContextId, useContext, useContextProvider, useSignal, useTask$, useId, PropFunction } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
+
 export interface DropdownProps {
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
   placeholder: string,
@@ -60,7 +61,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           }
 
         >
-          <Button tabIndex={0} variant="normal" color='primary'
+          <Button tabIndex={0} variant="normal" color={props.color}
             As='summary'
 
           >
@@ -70,11 +71,12 @@ export const Dropdown = component$<DropdownProps>((props) => {
               }
             </>
           </Button>
-          <ul tabIndex={0} class={`dropdown-content z-[1] menu  shadow rounded-box min-w-fit !w-[max-content]
+          <ul tabIndex={0} class={`dropdown-content  menu  shadow rounded-box min-w-fit !w-[max-content]
           ${props.maxWidthInPixels ? props.maxWidthInPixels : 'max-w-[250px]'}
-           text-sm  text-
-          gap-1 font-semibold`}
-              
+           text-sm  
+          gap-1 font-semibold
+          
+          `}
           >
             <>
               {
@@ -82,6 +84,18 @@ export const Dropdown = component$<DropdownProps>((props) => {
                   return (
                     <li class={
                       `
+                      ${props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
+                        props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
+                          props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
+                            props.color == 'neutral' ? 'hover:bg-neutral hover:bg-opacity-70 ' :
+                              props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
+                                props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
+                                  props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
+                                    props.color == 'error' ? 'hover:bg-error hover:bg-opacity-70 hover:text-base-200 text-error' :
+                                      ''
+                    }
+                      
+                      rounded-btn
                       
                       min-w-fit
                       w-auto
@@ -108,7 +122,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       }
                     >
 
-                      <Button variant="outline" color='primary' tabIndex={1} size='fit-content' >
+                      <Button variant="outline" color={props.color} tabIndex={1} size='sm' fitContent >
                         {item.value}
                       </Button>
 

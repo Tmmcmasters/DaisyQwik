@@ -11,7 +11,7 @@ export interface ButtonProps {
   type?: 'submit' | 'reset' | 'button',
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
   variant?: 'link' | 'ghost' | 'outline' | 'normal',
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'wide' | 'block' | 'responsive' | 'fit-content',
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'wide' | 'block' | 'responsive',
   active?: boolean,
   shape?: 'circle' | 'square',
   loadingStart?: boolean,
@@ -21,6 +21,7 @@ export interface ButtonProps {
   href?: string,
   tabIndex?: number,
   role?: "button" | string,
+  fitContent?: boolean
 }
 
 export const Button = component$<ButtonProps>((props) => {
@@ -40,7 +41,7 @@ export const Button = component$<ButtonProps>((props) => {
     btn ${props.color == 'primary' ? 'btn-primary' :
               props.color == 'secondary' ? 'btn-secondary' :
                 props.color == 'accent' ? 'btn-accent' :
-                  props.color == 'neutral' ? 'btn-neutral' :
+                  props.color == 'neutral' ? 'btn-neutral text-base-200' :
                     props.color == 'info' ? 'btn-info' :
                       props.color == 'success' ? 'btn-success' :
                         props.color == 'warning' ? 'btn-warning' :
@@ -73,8 +74,8 @@ export const Button = component$<ButtonProps>((props) => {
                     props.size == 'wide' ? 'btn-wide' :
                       props.size == 'block' ? 'btn-block' :
                         props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                          props.size == 'fit-content' ? 'btn-xs ' :
-                            'btn-md'}
+                          'btn-md'}
+        ${props.fitContent ? 'h-fit' : ''}
     `}
           // type={props.type}
           onClick$={props.onClick$}
@@ -129,8 +130,8 @@ export const Button = component$<ButtonProps>((props) => {
                       props.size == 'wide' ? 'btn-wide' :
                         props.size == 'block' ? 'btn-block' :
                           props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                            props.size == 'fit-content' ? 'btn-xs h-fit' :
-                              'btn-md'}
+                            'btn-md'}
+                              ${props.fitContent ? 'h-fit' : ''}
     `}
             type={props.type}
             onClick$={props.onClick$}
