@@ -41,7 +41,7 @@ export const Button = component$<ButtonProps>((props) => {
     btn ${props.color == 'primary' ? 'btn-primary' :
               props.color == 'secondary' ? 'btn-secondary' :
                 props.color == 'accent' ? 'btn-accent' :
-                  props.color == 'neutral' ? 'btn-neutral text-base-200' :
+                  props.color == 'neutral' ? 'btn-neutral ' :
                     props.color == 'info' ? 'btn-info' :
                       props.color == 'success' ? 'btn-success' :
                         props.color == 'warning' ? 'btn-warning' :

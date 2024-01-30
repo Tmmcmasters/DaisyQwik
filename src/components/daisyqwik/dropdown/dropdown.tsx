@@ -47,10 +47,16 @@ export const Dropdown = component$<DropdownProps>((props) => {
     <>
       <div
         document:onClick$={onClickHandler.value}
-        class="flex justify-center items-center h-fit  w-fit"
+        class={`flex justify-center items-center h-fit  w-fit
+          
+        `}
       >
 
-        <details class={`dropdown dropdown-${props.dropdownPosition ? props.dropdownPosition : 'bottom'}`}
+        <details class={
+          `dropdown dropdown-${props.dropdownPosition ? props.dropdownPosition : 'bottom'}
+          
+
+          `}
           id={dropdownId}
 
           onFocusIn$={
@@ -62,8 +68,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
           }
 
         >
-          <Button tabIndex={0} variant="normal" color={props.color}
-            As='summary'
+          <Button tabIndex={0} variant="outline" color={props.color}
+            As='summary' role='button'
 
           >
             <>
@@ -93,7 +99,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                                 props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
                                   props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
                                     props.color == 'error' ? 'hover:bg-error hover:bg-opacity-70 hover:text-base-200 text-error' :
-                                      ''
+                                      'hover:bg-neutral hover:bg-opacity-70 '
                     }
                       
                       rounded-btn
