@@ -13,6 +13,7 @@ export interface DropdownProps {
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId: string,
   closeOnOutsideClick?: boolean,
+  open?: boolean,
   maxWidthInPixels?: string,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
 }
@@ -52,9 +53,10 @@ export const Dropdown = component$<DropdownProps>((props) => {
         `}
       >
 
-        <details class={
-          `dropdown dropdown-${props.dropdownPosition ? props.dropdownPosition : 'bottom'}
-          
+        <div class={
+          `dropdown 
+          dropdown-${props.dropdownPosition ? props.dropdownPosition : 'bottom'}
+          ${props.open ? 'dropdown-open' : ''}
 
           `}
           id={dropdownId}
@@ -69,8 +71,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
 
         >
           <Button tabIndex={0} variant="outline" color={props.color}
-            As='summary' role='button'
-
+            As='div' role='button'
+          class={`focus:!outline-2 focus:!outline-base-content`}
           >
             <>
               {
@@ -78,7 +80,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
               }
             </>
           </Button>
-          <ul tabIndex={0} class={`dropdown-content  menu  shadow rounded-box min-w-fit !w-[max-content]
+          <ul tabIndex={1}  class={`dropdown-content  menu  shadow rounded-box min-w-fit !w-[max-content]
           ${props.maxWidthInPixels ? props.maxWidthInPixels : 'max-w-[250px]'}
            text-sm  
           gap-1 font-semibold
@@ -89,7 +91,9 @@ export const Dropdown = component$<DropdownProps>((props) => {
               {
                 props.dropdownItems.map((item) => {
                   return (
-                    <li class={
+                    <li
+                    
+                    class={
                       `
                       ${props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
                         props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
@@ -118,6 +122,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                           })
                         }
                       }
+                      
                       onTouchEnd$={
                         (event: TouchEvent) => {
                           value.value = item.value
@@ -129,7 +134,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       }
                     >
 
-                      <Button variant="outline" color={props.color} tabIndex={1} size='sm' fitContent >
+                      <Button variant="outline" color={props.color}  size='sm' fitContent >
                         {item.value}
                       </Button>
 
@@ -139,7 +144,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
               }
             </>
           </ul>
-        </details>
+        </div>
       </div>
     </>
   );

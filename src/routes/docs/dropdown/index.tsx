@@ -34,7 +34,7 @@ export default component$(() => {
                 color='neutral'
                 closeOnOutsideClick
                 dropdownId='dropdown1'
-                // dropdownPosition='top'
+                
                 onSelectionChange$={(event) => {console.log(event)}}
                 />
               </div>
