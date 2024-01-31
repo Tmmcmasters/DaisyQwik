@@ -35,6 +35,7 @@ export default component$(() => {
                 // closeOnOutsideClick
                 dropdownId='dropdown1'
                 // openOnHover
+                disabled
                 variant='normal'
                 onSelectionChange$={(event) => {console.log(event)}}
                 />

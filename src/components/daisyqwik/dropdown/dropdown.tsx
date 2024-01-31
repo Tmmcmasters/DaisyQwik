@@ -13,6 +13,7 @@ export interface DropdownProps {
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId: string,
   // closeOnOutsideClick?: boolean,
+  disabled?: boolean,
   forceOpen?: boolean,
   openOnHover?: boolean,
   maxWidthInPixels?: string,
@@ -74,7 +75,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
 
         >
           <Button tabIndex={0} variant={props.variant ? props.variant : 'normal'} color={props.color}
-            As='div' role='button'
+            As='div' role='button' disabled={props.disabled}
           class={`focus:!outline-2 focus:!outline-base-content`}
           >
             <>
@@ -148,7 +149,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       }
                     >
 
-                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color}  size='sm' fitContent >
+                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color}  size='sm' fitContent disabled={props.disabled}>
                         {item.value}
                       </Button>
 
