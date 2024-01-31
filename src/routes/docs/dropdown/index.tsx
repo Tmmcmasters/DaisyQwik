@@ -32,13 +32,17 @@ export default component$(() => {
                   { key: 2, value: 'Option Two' },
                 ]}
                 color='neutral'
-                // closeOnOutsideClick
                 dropdownId='dropdown1'
-                // openOnHover
                 removableValue
+                // openOnHover
                 width='w-52'
                 required
+                bottomLabel='Bottom Label'
+                topLabel='Top Label'
+                topAltLabel='Top Alt Label'
+                bottomAltLabel='Bottom Alt Label'
                 // disabled
+                // invalid
                 variant='outline'
                 onSelectionChange$={(event) => {console.log(event)}}
                 />

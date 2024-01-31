@@ -22,6 +22,7 @@ export interface DropdownProps {
   openOnHover?: boolean,
   invalid?: boolean,
   required?: boolean,
+  invalidMessage?: string
   noChevron?: boolean,
   listWidth?: 'full' | 'fit',
   // maxWidthInPixels?: string,
@@ -64,10 +65,11 @@ export const Dropdown = component$<DropdownProps>((props) => {
         class={`flex flex-col justify-center items-center h-fit  w-fit
           
         `}
+        aria-disabled={props.disabled}
       >
         <div class="flex flex-row justify-between items-center content-start w-full pr-2 pl-2">
-          <label class="label-text">{props.topLabel}</label>
-          <label class="label-text-alt">{props.topAltLabel}</label>
+          <label class={`label-text ${props.invalid ? 'text-error' : ''}`}>{props.topLabel}</label>
+          <label class={`label-text-alt ${props.invalid ? 'text-error' : ''}`}>{props.topAltLabel}</label>
         </div>
 
         <div class={
@@ -155,7 +157,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                           props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
                             props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
                               props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
-                                props.color == 'neutral' ? 'hover:!bg-base-100 hover:!bg-opacity-50' :
+                                props.color == 'neutral' ? 'hover:!bg-base-content hover:!bg-opacity-50 hover:!text-base-200' :
                                   props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
                                     props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
                                       props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
@@ -163,7 +165,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                                           'hover:bg-neutral hover:bg-opacity-70 ' : props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
                             props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
                               props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
-                                props.color == 'neutral' ? 'hover:!bg-base-content hover:!bg-opacity-50' :
+                                props.color == 'neutral' ? 'hover:!bg-base-content hover:!bg-opacity-50 hover:!text-base-200' :
                                   props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
                                     props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
                                       props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
@@ -216,8 +218,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
           </ul>
         </div>
         <div class="flex flex-row justify-between items-center content-start w-full pr-2 pl-2">
-          <label class="label-text">{props.bottomLabel}</label>
-          <label class="label-text-alt">{props.bottomAltLabel}</label>
+          <label class={`label-text ${props.invalid ? 'text-error' : ''}`}>{props.invalid && props.invalidMessage ? props.invalidMessage : props.bottomLabel}</label>
+          <label class={`label-text-alt ${props.invalid ? 'text-error' : ''}`}>{props.bottomAltLabel}</label>
         </div>
       </div>
     </>
