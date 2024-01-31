@@ -31,12 +31,14 @@ export default component$(() => {
                   },
                   { key: 2, value: 'Option Two' },
                 ]}
-                color='error'
+                color='neutral'
                 // closeOnOutsideClick
                 dropdownId='dropdown1'
                 // openOnHover
+                removableValue
+                width='w-52'
                 // disabled
-                variant='normal'
+                variant='outline'
                 onSelectionChange$={(event) => {console.log(event)}}
                 />
               </div>
