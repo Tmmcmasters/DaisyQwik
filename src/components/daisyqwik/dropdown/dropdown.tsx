@@ -146,7 +146,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                           props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
                             props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
                               props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
-                                props.color == 'neutral' ? 'hover:!bg-base-content' :
+                                props.color == 'neutral' ? 'hover:!bg-base-100 hover:!bg-opacity-50' :
                                   props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
                                     props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
                                       props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
@@ -164,7 +164,6 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       
                       
                       rounded-btn
-                      
                       min-w-fit
                       w-auto
                     `
