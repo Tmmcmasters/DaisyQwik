@@ -18,6 +18,7 @@ export interface DropdownProps {
   openOnHover?: boolean,
   invalid?: boolean,
   required?: boolean,
+  listWidth?: 'full' | 'fit',
   // maxWidthInPixels?: string,
   removableValue?: boolean,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
@@ -113,11 +114,12 @@ export const Dropdown = component$<DropdownProps>((props) => {
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </Button> : null}
           </Button>
-          <ul tabIndex={1} class={`dropdown-content  menu  shadow rounded-box min-w-fit !w-[max-content]
+          <ul tabIndex={1} class={`dropdown-content  menu  shadow rounded-box  !w-[max-content]
           max-w-full
           !bg-base-100
           !z-[999]
            text-sm  
+           ${props.listWidth == 'fit' ? 'min-w-fit' : 'min-w-full'}
           gap-1 font-semibold
           
           `}

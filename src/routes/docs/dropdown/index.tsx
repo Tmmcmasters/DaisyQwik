@@ -36,6 +36,7 @@ export default component$(() => {
                 dropdownId='dropdown1'
                 // openOnHover
                 removableValue
+                listWidth='fit'
                 width='w-52'
                 required
                 // disabled
