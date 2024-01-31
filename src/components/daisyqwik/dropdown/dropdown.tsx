@@ -13,6 +13,10 @@ export interface DropdownProps {
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId?: string,
   // closeOnOutsideClick?: boolean,
+  topLabel?: string,
+  bottomLabel?: string,
+  topAltLabel?: string,
+  bottomAltLabel?: string,
   disabled?: boolean,
   forceOpen?: boolean,
   openOnHover?: boolean,
@@ -57,10 +61,14 @@ export const Dropdown = component$<DropdownProps>((props) => {
     <>
       <div
         document:onClick$={onClickHandler.value}
-        class={`flex justify-center items-center h-fit  w-fit
+        class={`flex flex-col justify-center items-center h-fit  w-fit
           
         `}
       >
+        <div class="flex flex-row justify-between items-center content-start w-full pr-2 pl-2">
+          <label class="label-text">{props.topLabel}</label>
+          <label class="label-text-alt">{props.topAltLabel}</label>
+        </div>
 
         <div class={
           `dropdown 
@@ -206,6 +214,10 @@ export const Dropdown = component$<DropdownProps>((props) => {
               }
             </>
           </ul>
+        </div>
+        <div class="flex flex-row justify-between items-center content-start w-full pr-2 pl-2">
+          <label class="label-text">{props.bottomLabel}</label>
+          <label class="label-text-alt">{props.bottomAltLabel}</label>
         </div>
       </div>
     </>
