@@ -24,7 +24,7 @@ export default component$(() => {
             <Tab label="Preview" checked />
             <TabPanel maxHeight='[500px]' >
               <div class="w-full flex justify-center h-40">
-                <Dropdown placeholder='Click'
+                <Dropdown placeholder='Placeholder'
                 dropdownItems={[
                   { key: 1, 
                     value: 'Option One',

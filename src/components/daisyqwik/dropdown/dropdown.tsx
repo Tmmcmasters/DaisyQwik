@@ -87,9 +87,11 @@ export const Dropdown = component$<DropdownProps>((props) => {
              `}
           >
             <>
+            <p class={`${!value.value ? 'opacity-70' : 'opacity-100'}`}>
               {
                 value.value ? value.value : props.placeholder
               }
+              </p>
             </>
             {props.removableValue && value.value ?
               <Button  tabIndex={0} color='neutral' type='button' shape='circle' variant='ghost' size='xs'  role='button'
