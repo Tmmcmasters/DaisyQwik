@@ -16,6 +16,7 @@ export interface DropdownProps {
   disabled?: boolean,
   forceOpen?: boolean,
   openOnHover?: boolean,
+  invalid?: boolean,
   // maxWidthInPixels?: string,
   removableValue?: boolean,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
@@ -76,7 +77,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           }
 
         >
-          <Button tabIndex={0} variant={props.variant ? props.variant : 'normal'} color={props.color}
+          <Button tabIndex={0} variant={props.variant ? props.variant : 'normal'} color={props.invalid ? 'error' : props.color}
             As='div' role='button' disabled={props.disabled}
             class={`focus:!outline-2 w focus:!outline-base-content ${props.width ? props.width : 'w-52'} justify-between`}
           >
