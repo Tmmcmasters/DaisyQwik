@@ -79,14 +79,19 @@ export const Dropdown = component$<DropdownProps>((props) => {
         >
           <Button tabIndex={0} variant={props.variant ? props.variant : 'normal'} color={props.invalid ? 'error' : props.color}
             As='div' role='button' disabled={props.disabled}
-            class={`focus:!outline-2 w focus:!outline-base-content ${props.width ? props.width : 'w-52'} justify-between`}
+            class={`
+            focus:!outline-2 w focus:!outline-base-content 
+            ${props.width ? props.width : 'w-52'} 
+            justify-between
+            
+             `}
           >
             <>
               {
                 value.value ? value.value : props.placeholder
               }
             </>
-            {props.removableValue ?
+            {props.removableValue && value.value ?
               <Button  tabIndex={0} color='neutral' type='button' shape='circle' variant='ghost' size='xs'  role='button'
               onClick$={
                 () => {
