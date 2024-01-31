@@ -18,6 +18,7 @@ export interface DropdownProps {
   openOnHover?: boolean,
   invalid?: boolean,
   required?: boolean,
+  noChevron?: boolean,
   listWidth?: 'full' | 'fit',
   // maxWidthInPixels?: string,
   removableValue?: boolean,
@@ -118,7 +119,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </Button> : null}
               {
-                !value.value ?
+                !value.value && !props.noChevron ?
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/> </svg>
               : null
               }
