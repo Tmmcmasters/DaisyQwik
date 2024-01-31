@@ -17,6 +17,7 @@ export interface DropdownProps {
   forceOpen?: boolean,
   openOnHover?: boolean,
   invalid?: boolean,
+  required?: boolean,
   // maxWidthInPixels?: string,
   removableValue?: boolean,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
@@ -91,6 +92,10 @@ export const Dropdown = component$<DropdownProps>((props) => {
               {
                 value.value ? value.value : props.placeholder
               }
+              {props.required ?
+              <span class="text-error font-bold ml-1">*</span>
+              : null
+            }
               </p>
             </>
             {props.removableValue && value.value ?

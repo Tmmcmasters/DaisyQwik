@@ -37,6 +37,7 @@ export default component$(() => {
                 // openOnHover
                 removableValue
                 width='w-52'
+                required
                 // disabled
                 variant='outline'
                 onSelectionChange$={(event) => {console.log(event)}}
