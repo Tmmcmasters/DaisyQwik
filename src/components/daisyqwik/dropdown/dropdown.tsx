@@ -130,21 +130,25 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       key={item.key}
                       onClick$={
                         (event: PointerEvent) => {
-                          value.value = item.value
-                          props.onSelectionChange$?.({
-                            event: event,
-                            item: item
-                          })
+                          if (!props.disabled) {
+                            value.value = item.value
+                            props.onSelectionChange$?.({
+                              event: event,
+                              item: item
+                            })
+                          }
                         }
                       }
                       
                       onTouchEnd$={
                         (event: TouchEvent) => {
-                          value.value = item.value
-                          props.onSelectionChange$?.({
-                            event: event,
-                            item: item,
-                          })
+                          if (!props.disabled) {
+                            value.value = item.value
+                            props.onSelectionChange$?.({
+                              event: event,
+                              item: item,
+                            })
+                          }
                         }
                       }
                     >
