@@ -12,7 +12,7 @@ export interface DropdownProps {
   }[],
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId: string,
-  closeOnOutsideClick?: boolean,
+  // closeOnOutsideClick?: boolean,
   forceOpen?: boolean,
   openOnHover?: boolean,
   maxWidthInPixels?: string,
@@ -32,19 +32,19 @@ export const Dropdown = component$<DropdownProps>((props) => {
   const focusedInDropdown = useSignal(false)
   const onClickHandler = useSignal<any>(null)
 
-  useTask$(async () => {
-    if (props.closeOnOutsideClick) {
-      onClickHandler.value = $((event: MouseEvent) => {
-        const dropdownElement = document.getElementById(dropdownId)
-        if (event.target == dropdownElement || dropdownElement?.contains(event.target as Node)) {
-        } else {
-          if (dropdownDetails.value != null) {
-            dropdownDetails.value.open = false
-          }
-        }
-      })
-    }
-  });
+  // useTask$(async () => {
+  //   if (props.closeOnOutsideClick) {
+  //     onClickHandler.value = $((event: MouseEvent) => {
+  //       const dropdownElement = document.getElementById(dropdownId)
+  //       if (event.target == dropdownElement || dropdownElement?.contains(event.target as Node)) {
+  //       } else {
+  //         if (dropdownDetails.value != null) {
+  //           dropdownDetails.value.open = false
+  //         }
+  //       }
+  //     })
+  //   }
+  // });
 
   return (
     <>
