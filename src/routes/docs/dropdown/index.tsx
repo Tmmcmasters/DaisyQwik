@@ -31,10 +31,11 @@ export default component$(() => {
                   },
                   { key: 2, value: 'Option Two' },
                 ]}
-                color='neutral'
-                closeOnOutsideClick
+                color='error'
+                // closeOnOutsideClick
                 dropdownId='dropdown1'
-                
+                // openOnHover
+                variant='normal'
                 onSelectionChange$={(event) => {console.log(event)}}
                 />
               </div>

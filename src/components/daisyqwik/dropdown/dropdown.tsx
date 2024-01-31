@@ -13,9 +13,11 @@ export interface DropdownProps {
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId: string,
   closeOnOutsideClick?: boolean,
-  open?: boolean,
+  forceOpen?: boolean,
+  openOnHover?: boolean,
   maxWidthInPixels?: string,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
+  variant?:  'ghost' | 'outline' | 'normal',
 }
 
 export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
@@ -56,7 +58,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
         <div class={
           `dropdown 
           dropdown-${props.dropdownPosition ? props.dropdownPosition : 'bottom'}
-          ${props.open ? 'dropdown-open' : ''}
+          ${props.forceOpen ? 'dropdown-open' : ''}
+          ${props.openOnHover ? 'dropdown-hover' : ''}
 
           `}
           id={dropdownId}
@@ -70,7 +73,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           }
 
         >
-          <Button tabIndex={0} variant="outline" color={props.color}
+          <Button tabIndex={0} variant={props.variant ? props.variant : 'normal'} color={props.color}
             As='div' role='button'
           class={`focus:!outline-2 focus:!outline-base-content`}
           >
@@ -95,16 +98,27 @@ export const Dropdown = component$<DropdownProps>((props) => {
                     
                     class={
                       `
-                      ${props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
+                      ${
+                        props.variant == "ghost" || props.variant == "outline" ? 
+                        props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
                         props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
                           props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
-                            props.color == 'neutral' ? 'hover:bg-neutral hover:bg-opacity-70 ' :
+                            props.color == 'neutral' ? 'hover:!bg-base-content' :
                               props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
                                 props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
                                   props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
                                     props.color == 'error' ? 'hover:bg-error hover:bg-opacity-70 hover:text-base-200 text-error' :
-                                      'hover:bg-neutral hover:bg-opacity-70 '
+                                      'hover:bg-neutral hover:bg-opacity-70 ' : props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
+                        props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
+                          props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
+                            props.color == 'neutral' ? 'hover:!bg-base-content hover:!bg-opacity-50' :
+                              props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
+                                props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
+                                  props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
+                                    props.color == 'error' ? 'hover:bg-error hover:bg-opacity-70 hover:text-base-200 text-error' :
+                                      'hover:!bg-base-content hover:!bg-opacity-50 active:!bg-base-content active:!bg-opacity-50'
                     }
+                      
                       
                       rounded-btn
                       
@@ -134,7 +148,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                       }
                     >
 
-                      <Button variant="outline" color={props.color}  size='sm' fitContent >
+                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color}  size='sm' fitContent >
                         {item.value}
                       </Button>
 
