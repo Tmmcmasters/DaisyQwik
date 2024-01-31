@@ -23,7 +23,25 @@ export default component$(() => {
           <TabList size='md' groupName='tab1'>
             <Tab label="Preview" checked />
             <TabPanel maxHeight='[500px]' >
-              <div class="w-full flex justify-center h-40">
+              <div class="w-full flex flex-col justify-center h-40">
+                <Dropdown placeholder='Placeholder'
+                dropdownItems={[
+                  { key: 1, 
+                    value: 'Option One',
+                  },
+                  { key: 2, value: 'Option Two' },
+                ]}
+                color='neutral'
+                // closeOnOutsideClick
+                dropdownId='dropdown1'
+                // openOnHover
+                removableValue
+                width='w-52'
+                required
+                // disabled
+                variant='outline'
+                onSelectionChange$={(event) => {console.log(event)}}
+                />
                 <Dropdown placeholder='Placeholder'
                 dropdownItems={[
                   { key: 1, 

@@ -115,7 +115,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
           </Button>
           <ul tabIndex={1} class={`dropdown-content  menu  shadow rounded-box min-w-fit !w-[max-content]
           max-w-full
-          
+          !bg-base-100
+          !z-[999]
            text-sm  
           gap-1 font-semibold
           
