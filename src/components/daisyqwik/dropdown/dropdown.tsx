@@ -11,7 +11,7 @@ export interface DropdownProps {
     // onClick$?: PropFunction<() => void>
   }[],
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
-  dropdownId: string,
+  dropdownId?: string,
   // closeOnOutsideClick?: boolean,
   disabled?: boolean,
   forceOpen?: boolean,
@@ -24,11 +24,11 @@ export interface DropdownProps {
   width?: 'w-52' | 'w-56' | 'w-60' | 'w-64' | 'w-72' | 'w-80' | 'w-96' | 'w-1' | 'w-2' | ''
 }
 
-export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
+// export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
 
 export const Dropdown = component$<DropdownProps>((props) => {
-  useContextProvider(DropdownIdContext, { dropdownId: props.dropdownId });
-  const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
+  // useContextProvider(DropdownIdContext, { dropdownId: props.dropdownId });
+  // const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
 
   const value = useSignal<string | null>(null)
   // const mouseLeft = useSignal(true)
@@ -66,7 +66,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           ${props.openOnHover ? 'dropdown-hover' : ''}
 
           `}
-          id={dropdownId}
+          id={props.dropdownId}
 
           onFocusIn$={
             (event: FocusEvent, details: any) => {

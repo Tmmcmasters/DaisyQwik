@@ -57,7 +57,23 @@ export default component$(() => {
             </TabPanel>
           </TabList>
         </div>
-
+        <Dropdown placeholder='Click'
+                dropdownItems={[
+                  { key: 1, 
+                    value: 'Option One',
+                  },
+                  { key: 2, value: 'Option Two' },
+                ]}
+                color='neutral'
+                // closeOnOutsideClick
+                dropdownId='dropdown1'
+                // openOnHover
+                removableValue
+                width='w-52'
+                // disabled
+                variant='outline'
+                onSelectionChange$={(event) => {console.log(event)}}
+                />
       </div>
     </>
   );
