@@ -57,7 +57,7 @@ export default component$(() => {
                   item={
                     { key: 2, value: 'Option Two' }
                   }
-                  color='warning'
+                  color='neutral'
                   variant='outline'
                   >
                     Option Two

@@ -93,7 +93,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
             As='div' role='button' disabled={props.disabled}
             class={`
             focus:!outline-2 w focus:!outline-base-content 
-            ${props.width ? props.width : 'w-52'} 
+            ${props.width ? props.width : 'w-72'} 
             justify-between
             
              `}
@@ -235,6 +235,8 @@ export interface DropdownItemProps {
   variant?: 'normal' | 'ghost' | 'outline',
   disabled?: boolean,
   active?: boolean,
+  loadingStart?: boolean,
+  loadingEnd?: boolean,
 }
 
 
@@ -303,7 +305,7 @@ export const DropdownItem = component$<DropdownItemProps>((props) => {
                       }
                     >
 
-                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color} size='sm'  fitContent disabled={props.disabled} active={props.active}>
+                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color} size='sm'  fitContent disabled={props.disabled} active={props.active} loadingStart={props.loadingStart} loadingEnd={props.loadingEnd}>
                         
                         <Slot  />
 
