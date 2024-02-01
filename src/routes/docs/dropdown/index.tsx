@@ -29,7 +29,7 @@ export default component$(() => {
                 dropdownId='dropdown1'
                 removableValue
                 // openOnHover
-                width='w-52'
+                width='w-72'
                 required
                 bottomLabel='Bottom Label'
                 topLabel='Top Label'
