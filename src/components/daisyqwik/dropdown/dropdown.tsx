@@ -1,4 +1,4 @@
-import { $, component$, createContextId, useContext, useContextProvider, useSignal, useTask$, useId, PropFunction } from '@builder.io/qwik';
+import { $, component$, createContextId, useContext, useContextProvider, useSignal, useTask$, useId, PropFunction, Slot, useStore, Signal } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 
@@ -33,16 +33,19 @@ export interface DropdownProps {
 }
 
 // export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
+export const DropdownContext = createContextId<{ dropdownValue: Signal, onSelectionChange$?: PropFunction<(arg0: any) => void> }>('dropdown.context');
 
 export const Dropdown = component$<DropdownProps>((props) => {
+  const dropdownValue = useSignal<string | null>(null)
+  useContextProvider(DropdownContext, { dropdownValue: dropdownValue, onSelectionChange$: props.onSelectionChange$ });
   // useContextProvider(DropdownIdContext, { dropdownId: props.dropdownId });
   // const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
 
-  const value = useSignal<string | null>(null)
+  // const dropdownContext = useContext(DropdownContext)
   // const mouseLeft = useSignal(true)
   const dropdownDetails = useSignal<any>(null)
   const focusedInDropdown = useSignal(false)
-  const onClickHandler = useSignal<any>(null)
+  // const onClickHandler = useSignal<any>(null)
 
   // useTask$(async () => {
   //   if (props.closeOnOutsideClick) {
@@ -61,7 +64,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
   return (
     <>
       <div
-        document:onClick$={onClickHandler.value}
+        // document:onClick$={onClickHandler.value}
         class={`flex flex-col justify-center items-center h-fit  w-fit
           
         `}
@@ -100,9 +103,9 @@ export const Dropdown = component$<DropdownProps>((props) => {
              `}
           >
             <>
-            <p class={`${!value.value ? 'opacity-70' : 'opacity-100'}`}>
+            <p class={`${!dropdownValue.value ? 'opacity-70' : 'opacity-100'}`} >
               {
-                value.value ? value.value : props.placeholder
+                dropdownValue.value ? dropdownValue.value : props.placeholder
               }
               {props.required ?
               <span class="text-error font-bold ml-1">*</span>
@@ -113,11 +116,11 @@ export const Dropdown = component$<DropdownProps>((props) => {
               
             </>
             <div class="flex flex-row gap-1">
-            {props.removableValue && value.value ?
+            {props.removableValue && dropdownValue.value ?
               <Button  tabIndex={0} color='neutral' type='button' shape='circle' variant='ghost' size='xs'  role='button'
               onClick$={
                 () => {
-                  value.value = null
+                  dropdownValue.value = null
                   props.onSelectionChange$?.({
                     event: null,
                     item: null
@@ -129,7 +132,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
               </Button> : null}
               {
-                !value.value && !props.noChevron ?
+                !dropdownValue.value && !props.noChevron ?
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/> </svg>
               : null
               }
@@ -145,7 +148,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
           
           `}
           >
-            <>
+            {/* <>
               {
                 props.dropdownItems.map((item) => {
                   return (
@@ -214,7 +217,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
                   )
                 })
               }
-            </>
+            </> */}
+            <Slot />
           </ul>
         </div>
         <div class="flex flex-row justify-between items-center content-start w-full pr-2 pl-2">
@@ -224,6 +228,92 @@ export const Dropdown = component$<DropdownProps>((props) => {
       </div>
     </>
   );
+});
+
+export interface DropdownItemProps {
+  item: {
+    key: number
+    value: string
+  },
+  color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
+  variant?: 'normal' | 'ghost' | 'outline',
+  disabled?: boolean,
+}
+
+
+export const DropdownItem = component$<DropdownItemProps>((props) => {
+
+  // useContextProvider(DropdownContext, { dropdownValue: null, onSelectionChange$: props.onSelectionChange$ });
+  const dropdownContext = useContext(DropdownContext);
+  
+
+
+  return (
+
+    <li //https://qwik.dev/docs/components/state/#using-context "Allows me to use context to handle the state of the value"
+
+                      class={
+                        `
+                      ${props.variant == "ghost" || props.variant == "outline" ?
+                          props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
+                            props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
+                              props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
+                                props.color == 'neutral' ? 'hover:!bg-base-content hover:!bg-opacity-50 hover:!text-base-200' :
+                                  props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
+                                    props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
+                                      props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
+                                        props.color == 'error' ? 'hover:bg-error hover:bg-opacity-70 hover:text-base-200 text-error' :
+                                          'hover:bg-neutral hover:bg-opacity-70 ' : props.color == 'primary' ? 'hover:bg-primary hover:bg-opacity-70 text-primary hover:text-base-content' :
+                            props.color == 'secondary' ? 'hover:bg-secondary hover:bg-opacity-70 text-secondary hover:text-base-content' :
+                              props.color == 'accent' ? 'hover:bg-accent hover:bg-opacity-70 hover:text-base-200 text-accent' :
+                                props.color == 'neutral' ? 'hover:!bg-base-content hover:!bg-opacity-50 hover:!text-base-200' :
+                                  props.color == 'info' ? 'hover:bg-info hover:bg-opacity-70 hover:text-base-200 text-info' :
+                                    props.color == 'success' ? 'hover:bg-success hover:bg-opacity-70 hover:text-base-200 text-success' :
+                                      props.color == 'warning' ? 'hover:bg-warning hover:bg-opacity-70 hover:text-base-200 text-warning' :
+                                        props.color == 'error' ? 'hover:bg-error hover:bg-opacity-70 hover:text-base-200 text-error' :
+                                          'hover:!bg-base-content hover:!bg-opacity-50 active:!bg-base-content active:!bg-opacity-50'
+                        }
+                      
+                      
+                      rounded-btn
+                      min-w-fit
+                      w-auto
+                    `
+                      }
+                      key={props.item.key}
+                      onClick$={
+                        (event: PointerEvent) => {
+                          if (!props.disabled) {
+                            dropdownContext.dropdownValue.value = props.item.value
+                            dropdownContext.onSelectionChange$?.({
+                              event: event,
+                              item: props.item,
+                            })
+                          }
+                        }
+                      }
+
+                      onTouchEnd$={
+                        (event: TouchEvent) => {
+                          if (!props.disabled) {
+                            dropdownContext.dropdownValue.value = props.item.value
+                            dropdownContext.onSelectionChange$?.({
+                              event: event,
+                              item: props.item,
+                            })
+                          }
+                        }
+                      }
+                    >
+
+                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color} size='sm' fitContent disabled={props.disabled}>
+                        
+                        <Slot  />
+
+                      </Button>
+
+                    </li>
+  )
 });
 
 

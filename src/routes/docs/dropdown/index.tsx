@@ -1,7 +1,7 @@
 import {  component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
 import { Code } from '~/components/daisyqwik/code/code';
-import { Dropdown } from '~/components/daisyqwik/dropdown/dropdown';
+import { Dropdown, DropdownItem } from '~/components/daisyqwik/dropdown/dropdown';
 import { Tab, TabList, TabPanel } from '~/components/daisyqwik/tab/tab';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 
@@ -45,7 +45,30 @@ export default component$(() => {
                 // invalid
                 variant='outline'
                 onSelectionChange$={(event) => {console.log(event)}}
-                />
+                >
+                  <DropdownItem
+                  key={1}
+                  item={
+                    { key: 1, 
+                      value: 'Option One',
+                    }
+                  }
+                  color='neutral'
+                  variant='outline'
+                  >
+                    Option One
+                  </DropdownItem>
+                  <DropdownItem
+                  key={2}
+                  item={
+                    { key: 2, value: 'Option Two' }
+                  }
+                  color='neutral'
+                  variant='outline'
+                  >
+                    Option Two
+                  </DropdownItem>
+                </Dropdown>
               </div>
             </TabPanel>
             <Tab label="Code" />
