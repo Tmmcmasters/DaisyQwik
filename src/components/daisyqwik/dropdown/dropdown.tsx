@@ -135,7 +135,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
               }
               </div>
           </Button>
-          <ul tabIndex={1} class={`dropdown-content  menu  shadow rounded-box  !w-[max-content]
+          <ul tabIndex={1} class={`dropdown-content  menu  shadow-lg rounded-box  !w-[max-content]
           max-w-full
           !bg-base-100
           !z-[999]
@@ -149,7 +149,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
               {
                 props.dropdownItems.map((item) => {
                   return (
-                    <li
+                    <li //https://qwik.dev/docs/components/state/#using-context "Allows me to use context to handle the state of the value"
 
                       class={
                         `
