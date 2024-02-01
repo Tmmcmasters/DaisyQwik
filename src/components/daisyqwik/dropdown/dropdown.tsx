@@ -5,11 +5,7 @@ import { Button } from '../button/button';
 export interface DropdownProps {
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
   placeholder: string,
-  dropdownItems: {
-    key: number,
-    value: string,
-    // onClick$?: PropFunction<() => void>
-  }[],
+  
   dropdownPosition?: 'top' | 'bottom' | 'left' | 'right' | 'end',
   dropdownId?: string,
   // closeOnOutsideClick?: boolean,
@@ -238,6 +234,7 @@ export interface DropdownItemProps {
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
   variant?: 'normal' | 'ghost' | 'outline',
   disabled?: boolean,
+  active?: boolean,
 }
 
 
@@ -306,7 +303,7 @@ export const DropdownItem = component$<DropdownItemProps>((props) => {
                       }
                     >
 
-                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color} size='sm' fitContent disabled={props.disabled}>
+                      <Button variant={props.variant ? props.variant : 'normal'} color={props.color} size='sm'  fitContent disabled={props.disabled} active={props.active}>
                         
                         <Slot  />
 

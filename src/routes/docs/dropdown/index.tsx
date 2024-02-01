@@ -25,12 +25,6 @@ export default component$(() => {
             <TabPanel maxHeight='[500px]' >
               <div class="w-full flex  justify-center h-40">
                 <Dropdown placeholder='Placeholder'
-                dropdownItems={[
-                  { key: 1, 
-                    value: 'Option One',
-                  },
-                  { key: 2, value: 'Option Two' },
-                ]}
                 color='neutral'
                 dropdownId='dropdown1'
                 removableValue
@@ -63,7 +57,7 @@ export default component$(() => {
                   item={
                     { key: 2, value: 'Option Two' }
                   }
-                  color='neutral'
+                  color='warning'
                   variant='outline'
                   >
                     Option Two
