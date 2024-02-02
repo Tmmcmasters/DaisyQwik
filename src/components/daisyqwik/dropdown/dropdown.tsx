@@ -25,7 +25,7 @@ export interface DropdownProps {
   removableValue?: boolean,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
   variant?: 'ghost' | 'outline' | 'normal',
-  width?: 'w-52' | 'w-56' | 'w-60' | 'w-64' | 'w-72' | 'w-80' | 'w-96' | 'w-1' | 'w-2' | ''
+  width?: 'w-52' | 'w-56' | 'w-60' | 'w-64' | 'w-72' | 'w-80' | 'w-96' | 'w-1' | 'w-2' | 'w-28' | 'w-32' | 'w-36' | 'w-40' | ''
 }
 
 // export const DropdownIdContext = createContextId<{ dropdownId: string }>('dropdownId.name.context');
@@ -94,6 +94,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
             class={`
             focus:!outline-2 w focus:!outline-base-content 
             ${props.width ? props.width : 'w-72'} 
+            
             justify-between
             
              `}
@@ -140,6 +141,8 @@ export const Dropdown = component$<DropdownProps>((props) => {
            `}>
             <ul tabIndex={1} class={`flex flex-col p-2 shadow-lg rounded-box  
           max-w-full
+          max-h-80
+          overflow-y-auto
           !bg-base-100
           text-sm
           gap-1 font-semibold
