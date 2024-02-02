@@ -1,7 +1,7 @@
 {
   "name": "qwikdaisy",
   "description": "UI Library for Qwik based on daisyUI",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "node": ">=15.0.0"
   },
