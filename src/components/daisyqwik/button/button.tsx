@@ -3,15 +3,15 @@ import type { ClassList, PropFunction } from '@builder.io/qwik';
 
 
 export interface ButtonProps {
-  onClick$?: PropFunction<() => void>,
-  onFocusOut$?: PropFunction<() => void>,
-  onFocusIn$?: PropFunction<() => void>,
-  onTouchEnd$?: PropFunction<() => void>,
+  onClick$?: PropFunction<(any: any) => void>,
+  onFocusOut$?: PropFunction<(any: any) => void>,
+  onFocusIn$?: PropFunction<(any: any) => void>,
+  onTouchEnd$?: PropFunction<(any: any) => void>,
   disabled?: boolean,
   type?: 'submit' | 'reset' | 'button',
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error',
   variant?: 'link' | 'ghost' | 'outline' | 'normal',
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'wide' | 'block' | 'responsive',
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'wide' | 'block' | 'responsive' | 'sm-full' | 'lg-full' | 'md-full' | 'xs-full',
   active?: boolean,
   shape?: 'circle' | 'square',
   loadingStart?: boolean,
@@ -74,7 +74,11 @@ export const Button = component$<ButtonProps>((props) => {
                     props.size == 'wide' ? 'btn-wide' :
                       props.size == 'block' ? 'btn-block' :
                         props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                          'btn-md'}
+                          props.size == 'sm-full' ? 'btn-sm !w-[100%]' :
+                            props.size == 'lg-full' ? 'btn-lg !w-[100%]' :
+                              props.size == 'md-full' ? 'btn-md !w-[100%]' :
+                                props.size == 'xs-full' ? 'btn-xs !w-[100%]' :
+                            'btn-md'}
         ${props.fitContent ? 'h-fit' : ''}
     `}
           // type={props.type}
@@ -88,7 +92,7 @@ export const Button = component$<ButtonProps>((props) => {
           {props.loadingStart == true ? <span class="loading loading-spinner"></span> : null}
           <Slot />
           {props.loadingEnd == true ? <span class="loading loading-spinner"></span> : null}
-        </summary> : props.As == 'div' ?  <div
+        </summary> : props.As == 'div' ? <div
           tabIndex={props.tabIndex}
           class={`
     m-1
@@ -128,7 +132,11 @@ export const Button = component$<ButtonProps>((props) => {
                     props.size == 'wide' ? 'btn-wide' :
                       props.size == 'block' ? 'btn-block' :
                         props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
-                          'btn-md'}
+                         props.size == 'sm-full' ? 'btn-sm !w-[100%]' :
+                         props.size == 'lg-full' ? 'btn-lg !w-[100%]' :
+                              props.size == 'md-full' ? 'btn-md !w-[100%]' :
+                                props.size == 'xs-full' ? 'btn-xs !w-[100%]' :
+                            'btn-md'}
         ${props.fitContent ? 'h-fit' : ''}
     `}
           // type={props.type}
@@ -184,6 +192,10 @@ export const Button = component$<ButtonProps>((props) => {
                       props.size == 'wide' ? 'btn-wide' :
                         props.size == 'block' ? 'btn-block' :
                           props.size == 'responsive' ? 'btn-xs sm:btn-sm md:btn-md lg:btn-lg' :
+                          props.size == 'sm-full' ? 'btn-sm !w-[100%]' :
+                          props.size == 'lg-full' ? 'btn-lg !w-[100%]' :
+                              props.size == 'md-full' ? 'btn-md !w-[100%]' :
+                                props.size == 'xs-full' ? 'btn-xs !w-[100%]' :
                             'btn-md'}
                               ${props.fitContent ? 'h-fit' : ''}
     `}
