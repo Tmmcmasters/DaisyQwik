@@ -1,4 +1,4 @@
-import {  component$, createContextId, useContext, useContextProvider, useSignal,  PropFunction, Slot,  Signal } from '@builder.io/qwik';
+import {  component$, createContextId, useContext, useContextProvider, useSignal,  PropFunction, Slot,  Signal, useTask$ } from '@builder.io/qwik';
 import { Button } from '../button/button';
 
 
@@ -21,6 +21,7 @@ export interface DropdownProps {
   invalidMessage?: string
   noChevron?: boolean,
   listWidth?: 'full' | 'fit',
+  selectedValue?: string | null,
   // maxWidthInPixels?: string,
   removableValue?: boolean,
   onSelectionChange$?: PropFunction<(arg0: any) => void>,
@@ -32,7 +33,7 @@ export interface DropdownProps {
 export const DropdownContext = createContextId<{ dropdownValue: Signal, onSelectionChange$?: PropFunction<(arg0: any) => void> }>('dropdown.context');
 
 export const Dropdown = component$<DropdownProps>((props) => {
-  const dropdownValue = useSignal<string | null>(null)
+  const dropdownValue = useSignal<string | null>(props.selectedValue ? props.selectedValue : null)
   useContextProvider(DropdownContext, { dropdownValue: dropdownValue, onSelectionChange$: props.onSelectionChange$ });
   // useContextProvider(DropdownIdContext, { dropdownId: props.dropdownId });
   // const dropdownId = (useContext(DropdownIdContext) as { dropdownId: string }).dropdownId;
@@ -42,6 +43,7 @@ export const Dropdown = component$<DropdownProps>((props) => {
   const dropdownDetails = useSignal<any>(null)
   const focusedInDropdown = useSignal(false)
   // const onClickHandler = useSignal<any>(null)
+
 
   // useTask$(async () => {
   //   if (props.closeOnOutsideClick) {
@@ -214,6 +216,7 @@ export const DropdownItem = component$<DropdownItemProps>((props) => {
       onClick$={(event: PointerEvent) => {
         if (!props.disabled) {
           dropdownContext.dropdownValue.value = props.item.value
+
           dropdownContext.onSelectionChange$?.({
             event: event,
             item: props.item,
