@@ -1,7 +1,6 @@
 import {  component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
 import { Code } from '~/components/daisyqwik/code/code';
-import { Dropdown, DropdownItem } from '~/components/daisyqwik/dropdown/dropdown';
 import { Tab, TabList, TabPanel } from '~/components/daisyqwik/tab/tab';
 import { H1 } from '~/components/daisyqwik/typography/h1/h1';
 
