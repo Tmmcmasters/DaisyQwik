@@ -35,42 +35,50 @@ export default component$(() => {
     const targetElement = event.target instanceof Element ? event.target : null;
     const anchor = targetElement ? targetElement.closest('a[href^="#"]') : null;
     if (!anchor) return;
- 
+
     event.preventDefault();
     const href = anchor.getAttribute('href');
     if (href) {
       const targetElement = document.querySelector(href) as HTMLElement;
       // if (targetElement) {
-        const headerElement = document.querySelector('#docs-header') as HTMLElement;
-        const scrollPosition = targetElement.offsetTop - (headerElement.clientHeight - 20 || 0);
-        
-        window.scrollTo({
-          top: scrollPosition,
-          behavior: 'smooth'
-        });
+      const headerElement = document.querySelector('#docs-header') as HTMLElement;
+      const scrollPosition = targetElement.offsetTop - (headerElement.clientHeight - 20 || 0);
+
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
       // }
     }
   }));
-  
+
 
   return (
     <>
-      <main class="h-fit pb-20 min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60% scroll-smooth">
-      <Docsheader />
+      <main class="h-fit  min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-950  to-transparent to-60% scroll-smooth">
         <div class="drawer lg:drawer-open ">
           <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
           <div class="drawer-content ">
+            <Docsheader />
             <div class='flex flex-col justify-start align-middle items-start gap-3 pl-10 pt-5 h-fit'>
               <Slot />
             </div>
+            <div class="pt-36 pb-10">
+              <Footer />
+            </div>
           </div>
           <div class="drawer-side lg:z-auto z-50 ">
+            <div class="navbar lg:flex lg:justify-center md:hidden lg:items-center !sticky top-0 z-50 backdrop-blur-lg bg-base-200 bg-opacity-70 ">
+            <a class="btn btn-ghost rounded-md text-3xl font-bold
+      bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text drop-shadow-lg" href="/">
+              qwikdaisy
+            </a>
+        </div>
             <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
             <Menu />
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 });
