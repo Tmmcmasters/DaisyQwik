@@ -1,11 +1,15 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useContext, useSignal } from '@builder.io/qwik';
 import { Dropdown, DropdownItem } from '../dropdown/dropdown';
+import { ThemeContext } from '~/root';
 
 export interface ThemeDropdownProps {
   themes: {key: number, value: string}[],
 }
 
 export const ThemeDropdown = component$<ThemeDropdownProps>((props) => {
+  const themeContext = useContext(ThemeContext);
+  
+
   return (
     <div>
     <Dropdown
@@ -15,6 +19,12 @@ export const ThemeDropdown = component$<ThemeDropdownProps>((props) => {
     variant='outline'
     width='w-40'
     removableValue
+    onSelectionChange$={(item) => {
+      console.log(item.item.value); 
+      themeContext.theme.value = item.item.value
+      localStorage.setItem('theme', item.item.value)
+    }}
+    
     >
       {
         props.themes.map((theme) => {

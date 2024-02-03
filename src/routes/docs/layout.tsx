@@ -68,7 +68,7 @@ export default component$(() => {
             </div>
           </div>
           <div class="drawer-side lg:z-auto z-50 ">
-            <div class="navbar lg:flex lg:justify-center md:hidden lg:items-center !sticky top-0 z-50 backdrop-blur-lg bg-base-200 bg-opacity-70 ">
+            <div class="navbar lg:flex lg:justify-center md:hidden lg:items-center !sticky top-0 z-50 backdrop-blur-lg ">
             <a class="btn btn-ghost rounded-md text-3xl font-bold
       bg-gradient-to-r from-purple-500   to-[#FE9A03]  text-transparent bg-clip-text drop-shadow-lg" href="/">
               qwikdaisy
