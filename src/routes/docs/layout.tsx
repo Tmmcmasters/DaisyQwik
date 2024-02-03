@@ -42,7 +42,7 @@ export default component$(() => {
       const targetElement = document.querySelector(href) as HTMLElement;
       // if (targetElement) {
       const headerElement = document.querySelector('#docs-header') as HTMLElement;
-      const scrollPosition = targetElement.offsetTop - (headerElement.clientHeight - 20 || 0);
+      const scrollPosition = targetElement.offsetTop - (headerElement.clientHeight - 0 || 0);
 
       window.scrollTo({
         top: scrollPosition,
