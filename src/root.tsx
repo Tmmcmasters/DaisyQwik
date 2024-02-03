@@ -1,13 +1,12 @@
-import { $, Signal, component$, createContextId, useContextProvider, useOnDocument, useOnWindow, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { $, Signal, component$, createContextId, useContextProvider, useOnDocument,  useSignal } from "@builder.io/qwik";
 import {
   QwikCityProvider,
 
   RouterOutlet,
   ServiceWorkerRegister,
-  server$,
+  
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
-import type { RequestHandler } from "@builder.io/qwik-city";
 
 import "./global.css";
 
@@ -21,12 +20,11 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
   const theme = useSignal('darkV2')
-  const themeProvider =  useContextProvider(ThemeContext, { theme: theme });
-
+  
   useOnDocument('DOMContentLoaded', $(() => {
     theme.value = localStorage.getItem('theme') || 'darkV2'
-    console.log(theme.value)
   }))
+  useContextProvider(ThemeContext, { theme: theme });
   
 
 
